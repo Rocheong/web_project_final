@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/banner.css" />
+    <link rel="stylesheet" href="../../style/card.css" />
+    <link rel="stylesheet" href="../../style/question.css" />
+    <link rel="stylesheet" href="../../style/quiz.css" />
+  </head>
+  <body>
+    <div class="sticky-status-bar">
+      <div class="status-timer" id="timer-display">⏱️ 남은 시간 - 15:00</div>
+      <div class="status-progress-container">
+        <div class="status-progress-bar">
+          <div class="status-progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="status-progress-text" id="progress-text">0 / 15</div>
+      </div>
+    </div>
+    <header>
+      <div class="header-left">
+        <a href="/index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="banner" id="main-banner">
+        <div class="banner-text" id="main-banner-text">
+          <h1>보안자료구조</h1>
+          <h3>
+            자료구조는 컴퓨터에서 사용할 자료를 더 효율적으로 저장하고 처리할
+            수있도록 자료의 특성과 사용 용도에 맞게 분류하고<br />
+            정리(구조화)한 것으로 알고리즘, D/B, 운영제체 등에 연계된 주요
+            교과목이다.<br />
+            이 강좌에서는 일반적인 자료와 알고리즘의 관계 및 스트링과 배열,
+            스택과 큐, 리스트 등과 정렬 및 탐색, 해싱 등에 대해 다루며,<br />
+            암호와 보안응용 프로그램을 위한 자료구조 이론과 기초를 실습한다.
+          </h3>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <span
+          >출제 범위 |
+          <span style="font-size: smaller">
+            챕터 3, 순차 자료 구조와 선형 리스트 / 챕터 4, 연결 자료구조와 연결
+            리스트 / 챕터 5, 스택
+          </span></span
+        >
+      </div>
+    </div>
+
+    <div class="question_list">
+      <div class="question_box" data-qnum="sq1">
+        <div class="q_num">Q1</div>
+        <div class="q_reference text_ref">
+          <p><strong>[보기]</strong></p>
+          <p>int a[4][10];</p>
+        </div>
+
+        <p class="q_text">
+          C프로그램에서 위와 같이 배열 a를 선언하였다. 배열 a가 할당된 시작
+          주소를 10000이라고 가정했을때, a[2][8] 주소와 몇 번째 원소인지
+          구하시오.
+        </p>
+
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq1" value="1" /> 1. 주소: 10096, 28번째
+            원소</label
+          >
+          <label
+            ><input type="radio" name="sq1" value="2" /> 2. 주소: 10112, 29번째
+            원소</label
+          >
+          <label
+            ><input type="radio" name="sq1" value="3" /> 3. 주소: 10120, 30번째
+            원소</label
+          >
+          <label
+            ><input type="radio" name="sq1" value="4" /> 4. 주소: 100112, 29번째
+            원소</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq2">
+        <div class="q_num">Q2</div>
+        <div class="q_reference text_ref">
+          <p><strong>[보기]</strong></p>
+          <p>int b[3][4][10];</p>
+        </div>
+
+        <p class="q_text">
+          C프로그램에서 위와 같이 배열 b를 선언하였다. 배열 b가 할당된 시작
+          주소를 10000이라고 가정했을 때, b[1][2][8] 주소와 몇 번째 원소인지
+          구하시오.
+        </p>
+
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq2" value="1" /> 1. 주소: 10192, 68번째
+            원소</label
+          >
+          <label
+            ><input type="radio" name="sq2" value="2" /> 2. 주소: 10256, 69번째
+            원소</label
+          >
+          <label
+            ><input type="radio" name="sq2" value="3" /> 3. 주소: 10272, 69번째
+            원소</label
+          >
+          <label
+            ><input type="radio" name="sq2" value="4" /> 4. 주소: 10312, 70번째
+            원소</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq3">
+        <div class="q_num">Q3</div>
+        <p class="q_text">순차 자료구조와 관련된 것은?</p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq3" value="1" /> 1. 디스크 조각
+            모으기</label
+          >
+          <label><input type="radio" name="sq3" value="2" /> 2. 재귀호출</label>
+          <label><input type="radio" name="sq3" value="3" /> 3. 포인터</label>
+          <label
+            ><input type="radio" name="sq3" value="4" /> 4. 백신 프로그램</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq4">
+        <div class="q_num">Q4</div>
+        <p class="q_text">선형 리스트에 대한 설명으로 틀린 것은?</p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq4" value="1" /> 1. 선형 리스트는
+            메모리에 연속된 공간을 사용한다.</label
+          >
+          <label
+            ><input type="radio" name="sq4" value="2" /> 2. 삽입 연산에
+            효율적이다.</label
+          >
+          <label
+            ><input type="radio" name="sq4" value="3" /> 3. 배열을 사용해
+            구현하는 순차 자료구조이다.</label
+          >
+          <label
+            ><input type="radio" name="sq4" value="4" /> 4. 선형 리스트의 전체
+            원소를 순서대로 액세스하는 속도가 빠르다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq5">
+        <div class="q_num">Q5</div>
+        <p class="q_text">
+          선형 리스트를 L[m][n]의 2차원 배열로 구현할 때, 선형 리스트에 저장할
+          수 있는 원소의 최대 개수는
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq5" value="1" /> 1. (m + 1) x (n +
+            1)개</label
+          >
+          <label
+            ><input type="radio" name="sq5" value="2" /> 2. (m x n)개</label
+          >
+          <label
+            ><input type="radio" name="sq5" value="3" /> 3. (m - 1) x (n -
+            2)개</label
+          >
+          <label
+            ><input type="radio" name="sq5" value="4" /> 4. (m x n) + 1개</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq6">
+        <div class="q_num">Q6</div>
+        <p class="q_text">연결 리스트를 사용하기에 적합한 경우는?</p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq6" value="1" /> 1. 자료를 정렬하는
+            경우</label
+          >
+          <label
+            ><input type="radio" name="sq6" value="2" /> 2. 자료를 역순으로
+            처리하는 경우</label
+          >
+          <label
+            ><input type="radio" name="sq6" value="3" /> 3. 자료의 삽입과 삭제가
+            많은 경우</label
+          >
+          <label
+            ><input type="radio" name="sq6" value="4" /> 4. 자료를 탐색하는
+            경우</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq7">
+        <div class="q_num">Q7</div>
+        <p class="q_text">연결 리스트에 대한 설명으로 거리가 먼 것은?</p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq7" value="1" /> 1. 노드의 삽입과 삭제가
+            쉽다.</label
+          >
+          <label
+            ><input type="radio" name="sq7" value="2" /> 2. 노드들이 포인터로
+            연결되어 있어 탐색이 빠르다</label
+          >
+          <label
+            ><input type="radio" name="sq7" value="3" /> 3. 연결해 주는 포인터를
+            위한 추가 공간이 필요하다.</label
+          >
+          <label
+            ><input type="radio" name="sq7" value="4" /> 4. 연결 리스트 중에서
+            중간 노드 연결이 끊어지면 그 다음 노드를 찾기 어렵다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq8">
+        <div class="q_num">Q8</div>
+        <div class="q_reference text_ref">
+          <p><strong>[보기]</strong></p>
+          <p>[리스트 구조] <br />L → [가] → [나] → [다] → [라] → NULL</p>
+          <p>
+            for (tmp = L; tmp->link != p; tmp = tmp->link);<br />tmp->link =
+            p->link;
+          </p>
+        </div>
+
+        <p class="q_text">
+          위와 같은 단순 연결 리스트에 대해, 아래와 같은 C언어로 작성된
+          프로그램을 수행한 후 포인터 tmp가 가리키는 노드는?<br />(단, L: 머리
+          노드, p: 노드 [다]를 가리킴, 각 노드는 data | link 구조)
+        </p>
+
+        <div class="q_choices">
+          <label><input type="radio" name="sq8" value="1" /> 1. 가</label>
+          <label><input type="radio" name="sq8" value="2" /> 2. 나</label>
+          <label><input type="radio" name="sq8" value="3" /> 3. 다</label>
+          <label><input type="radio" name="sq8" value="4" /> 4. 라</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq9">
+        <div class="q_num">Q9</div>
+        <p class="q_text">
+          n개의 데이터로 구성된 선형 리스트를 단순 연결 리스트로 표현하고자
+          한다. 다음 중 시간 복잡도가 가장 낮은 연산은?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq9" value="1" /> 1. 포인터가 가리키는
+            노드의 다음 노드를 리스트에서 삭제</label
+          >
+          <label
+            ><input type="radio" name="sq9" value="2" /> 2. 리스트 길이를
+            출력</label
+          >
+          <label
+            ><input type="radio" name="sq9" value="3" /> 3. 포인터값이 주어진
+            임의의 노드 앞에 새로운 노드 추가</label
+          >
+          <label
+            ><input type="radio" name="sq9" value="4" /> 4. 마지막 노드의
+            데이터</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq10">
+        <div class="q_num">Q10</div>
+        <p class="q_text">
+          자료들이 단순 연결 리스트에 다음과 같이 구성되어 있을 때, 자료 B를
+          삭제한 후 변경된 내용으로 옳은 것은?
+        </p>
+
+        <div class="q_reference img_ref">
+          <img
+            src="../../../assets/secure-data- sq10.png"
+            alt="보안자료구조 퀴즈 이미지"
+          />
+        </div>
+
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq10" value="1" /> 1. A의 link →
+            2030</label
+          >
+          <label
+            ><input type="radio" name="sq10" value="2" /> 2. B의 link →
+            2010</label
+          >
+          <label
+            ><input type="radio" name="sq10" value="3" /> 3. B의 link →
+            2020</label
+          >
+          <label
+            ><input type="radio" name="sq10" value="4" /> 4. C의 link →
+            2030</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq11">
+        <div class="q_num">Q11</div>
+        <div class="q_reference text_ref">
+          <p><strong>[보기]</strong></p>
+          <p>
+            ㄱ. FIFO 방식으로 처리된다.<br />ㄴ. 순서 리스트의 뒤에서 노드가
+            삽입되며 앞에서 노드가 제거된다.<br />ㄷ. 선형 리스트의 양쪽 끝에서
+            삽입과 삭제가 모두 가능한 자료구조이다.<br />ㄹ. 인터럽트 처리,
+            서브루틴 작업 등에 응용된다.
+          </p>
+        </div>
+
+        <p class="q_text">다음 중 스택에 대한 옳은 내용으로만 나열된 것은?</p>
+
+        <div class="q_choices">
+          <label><input type="radio" name="sq11" value="1" /> 1. ㄱ, ㄴ</label>
+          <label><input type="radio" name="sq11" value="2" /> 2. ㄴ, ㄷ</label>
+          <label><input type="radio" name="sq11" value="3" /> 3. ㄹ</label>
+          <label
+            ><input type="radio" name="sq11" value="4" /> 4. ㄱ, ㄴ ,ㄷ ,
+            ㄹ</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq12">
+        <div class="q_num">Q12</div>
+        <p class="q_text">스택 메모리에 대한 정보의 입출력 방식은?</p>
+        <div class="q_choices">
+          <label><input type="radio" name="sq12" value="1" /> 1. FIFO</label>
+          <label><input type="radio" name="sq12" value="2" /> 2. FILO</label>
+          <label><input type="radio" name="sq12" value="3" /> 3. LILO</label>
+          <label><input type="radio" name="sq12" value="4" /> 4. LIFO</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq13">
+        <div class="q_num">Q13</div>
+        <p class="q_text">스택의 응용 분야와 거리가 먼 것은?</p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq13" value="1" /> 1. 운영체제의 작업
+            스케줄링</label
+          >
+          <label
+            ><input type="radio" name="sq13" value="2" /> 2. 함수 호출의 순서
+            제어</label
+          >
+          <label
+            ><input type="radio" name="sq13" value="3" /> 3. 인터럽트
+            처리</label
+          >
+          <label
+            ><input type="radio" name="sq13" value="4" /> 4. 수식 계산</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq14">
+        <div class="q_num">Q14</div>
+        <p class="q_text">
+          서브프로그램이 호출될 때 사용되는 자료 구조로 옳은 것은?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="sq14" value="1" /> 1. 연결 리스트</label
+          >
+          <label><input type="radio" name="sq14" value="2" /> 2. 큐</label>
+          <label><input type="radio" name="sq14" value="3" /> 3. 스택</label>
+          <label><input type="radio" name="sq14" value="4" /> 4. 히프</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="sq15">
+        <div class="q_num">Q15</div>
+        <div class="q_reference text_ref">
+          <p><strong>[보기]</strong></p>
+          <p>[리스트 구조] <br />L → [가] → [나] → [다] → [라] → NULL</p>
+          <p>
+            procedure Insert(data, n, top, Stack)<br />if top>= n then call
+            Stack - Full; <br />top+=1; <br />Stack(top) = ( ) <br />end Insert
+          </p>
+        </div>
+
+        <p class="q_text">
+          다음은 스택에 자료를 삽입하는 알고리즘이다. 괄호에 적합한 내용은?
+        </p>
+
+        <div class="q_choices">
+          <label><input type="radio" name="sq15" value="1" /> 1. top</label>
+          <label><input type="radio" name="sq15" value="2" /> 2. data</label>
+          <label><input type="radio" name="sq15" value="3" /> 3. top - 1</label>
+          <label
+            ><input type="radio" name="sq15" value="4" /> 4. data - 1</label
+          >
+        </div>
+      </div>
+    </div>
+    <div class="submit_box">
+      <button type="button" class="btn_submit" id="btn-submit">제출하기</button>
+    </div>
+
+    <div class="custom-modal-overlay" id="result-modal">
+      <div class="custom-modal">
+        <h2 id="modal-title">퀴즈 결과</h2>
+        <p id="modal-content">정답: -개 / 오답: -개</p>
+        <div class="custom-modal-buttons">
+          <button type="button" class="btn-close" id="btn-modal-close">
+            확인
+          </button>
+          <a href="wrong_notes.html" class="btn-wrong-notes"
+            >오답노트 바로가기</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+    <script src="/src/script/main.js"></script>
+    <script src="../../script/quiz.js"></script>
+  </body>
+</html>

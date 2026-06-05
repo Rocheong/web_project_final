@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/banner.css" />
+    <link rel="stylesheet" href="../../style/card.css" />
+    <link rel="stylesheet" href="../../style/question.css" />
+    <link rel="stylesheet" href="../../style/quiz.css" />
+  </head>
+  <body>
+    <div class="sticky-status-bar">
+      <div class="status-timer" id="timer-display">⏱️ 남은 시간 - 15:00</div>
+      <div class="status-progress-container">
+        <div class="status-progress-bar">
+          <div class="status-progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="status-progress-text" id="progress-text">0 / 15</div>
+      </div>
+    </div>
+    <header>
+      <div class="header-left">
+        <a href="/index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="banner" id="main-banner">
+        <div class="banner-text" id="main-banner-text">
+          <h1>서버구축및운영실습</h1>
+          <h3>
+            본 과목에서는 서버로 사용되는 운영체제인 리눅스의 구조 및 특징, 활용
+            방법 등에 대하여 학습한다.<br />
+            이를 위하여 리눅스의 설치 방법, 명령어 사용법, 시스템 및 서버 관리
+            방법까지 이론과 실습을 병행함으로써 운영체제의 동작에 대해 이해하고
+            활용할 수 있는 능력을 키운다.
+          </h3>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <span
+          >출제 범위 |
+          <span style="font-size: smaller">
+            서버구축및운영실습 1~6주차 진도
+          </span></span
+        >
+      </div>
+    </div>
+
+    <div class="question_list">
+      <div class="question_box" data-qnum="serq1">
+        <div class="q_num">Q1</div>
+        <p class="q_text">
+          리눅스 시스템의 구조 중 하드웨어를 제어하고 운영체제의 핵심 역할을
+          수행하는 것은 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="serq1" value="1" /> 1. 쉘(Shell)</label
+          >
+          <label
+            ><input type="radio" name="serq1" value="2" /> 2.
+            커널(Kernel)</label
+          >
+          <label
+            ><input type="radio" name="serq1" value="3" /> 3.
+            라이브러리(Library)</label
+          >
+          <label
+            ><input type="radio" name="serq1" value="4" /> 4. 응용
+            프로그램(Application)</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq2">
+        <div class="q_num">Q2</div>
+        <p class="q_text">
+          현재 리눅스의 표준 쉘로 사용되며, 방향키 기능을 지원하고 본 쉘(sh)과
+          호환성이 높은 쉘의 이름은 무엇입니까? (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq2" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq3">
+        <div class="q_num">Q3</div>
+        <p class="q_text">
+          관리자 계정(root)으로 로그인했을 때 터미널에 표시되는 프롬프트 기호는
+          무엇입니까?
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq3" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq4">
+        <div class="q_num">Q4</div>
+        <p class="q_text">
+          mkdir 명령어로 'a/b/c'와 같이 하위 디렉토리까지 한 번에 생성하려고 할
+          때 사용하는 옵션은 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="serq4" value="1" /> 1. -r</label>
+          <label><input type="radio" name="serq4" value="2" /> 2. -f</label>
+          <label><input type="radio" name="serq4" value="3" /> 3. -p</label>
+          <label><input type="radio" name="serq4" value="4" /> 4. -a</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq5">
+        <div class="q_num">Q5</div>
+        <p class="q_text">
+          파일이나 디렉토리를 삭제하는 rm 명령어에서, 비어 있지 않은 디렉토리를
+          강제로 삭제하기 위해 사용하는 옵션 조합은 무엇입니까? (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq5" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq6">
+        <div class="q_num">Q6</div>
+        <p class="q_text">
+          파일의 수정 시간을 현재 시간으로 변경하거나 내용이 없는 빈 파일을
+          생성할 때 사용하는 명령어는 무엇입니까? (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq6" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq7">
+        <div class="q_num">Q7</div>
+        <p class="q_text">
+          ls -l 실행 결과에서 파일 유형이 'l'로 표시된다면 이는 무엇을
+          의미합니까?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="serq7" value="1" /> 1. 일반 파일</label
+          >
+          <label
+            ><input type="radio" name="serq7" value="2" /> 2. 디렉토리</label
+          >
+          <label
+            ><input type="radio" name="serq7" value="3" /> 3. 심볼릭 링크</label
+          >
+          <label
+            ><input type="radio" name="serq7" value="4" /> 4. 장치 파일</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq8">
+        <div class="q_num">Q8</div>
+        <p class="q_text">
+          파일의 권한이 rwxr-xr-x일 때, 이를 8진수 숫자로 변환하면 무엇입니까?
+          (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq8" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq9">
+        <div class="q_num">Q9</div>
+        <p class="q_text">
+          다음 중 윈도우의 '바로가기'와 유사하며 원본 파일의 경로 정보를 담고
+          있는 링크 방식은 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="serq9" value="1" /> 1. 하드 링크</label
+          >
+          <label
+            ><input type="radio" name="serq9" value="2" /> 2. 심볼릭 링크</label
+          >
+          <label
+            ><input type="radio" name="serq9" value="3" /> 3. 시스템 링크</label
+          >
+          <label
+            ><input type="radio" name="serq9" value="4" /> 4. 데이터 링크</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq10">
+        <div class="q_num">Q10</div>
+        <p class="q_text">
+          명령어의 결과값을 기존 파일의 내용 뒤에 이어서 추가(append)하려고 할
+          때 사용하는 리다이렉션 기호는 무엇입니까? (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq10" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq11">
+        <div class="q_num">Q11</div>
+        <p class="q_text">
+          vi 편집기의 명령 모드에서 현재 커서가 위치한 한 줄 전체를
+          삭제(오려두기)하는 명령키는 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="serq11" value="1" /> 1. x</label>
+          <label><input type="radio" name="serq11" value="2" /> 2. dw</label>
+          <label><input type="radio" name="serq11" value="3" /> 3. dd</label>
+          <label><input type="radio" name="serq11" value="4" /> 4. u</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq12">
+        <div class="q_num">Q12</div>
+        <p class="q_text">
+          vi 편집기에서 수정된 내용을 저장하고 강제로 종료하기 위해 사용하는
+          콜론(:) 명령어는 무엇입니까? (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq12" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq13">
+        <div class="q_num">Q13</div>
+        <p class="q_text">
+          find 명령어를 사용하여 현재 디렉토리 이하에서 파일 이름이 'test'로
+          시작하는 모든 파일을 찾는 명령어 형식으로 옳은 것은?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="serq13" value="1" /> 1. find -name
+            test</label
+          >
+          <label
+            ><input type="radio" name="serq13" value="2" /> 2. find -name
+            "test*"</label
+          >
+          <label
+            ><input type="radio" name="serq13" value="3" /> 3. find -grep
+            test</label
+          >
+          <label
+            ><input type="radio" name="serq13" value="4" /> 4. find -ls
+            test</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq14">
+        <div class="q_num">Q14</div>
+        <p class="q_text">
+          grep 명령어를 사용할 때 대소문자를 구분하지 않고 패턴을 검색하도록
+          설정하는 옵션은 무엇입니까? (주관식)
+        </p>
+        <div class="q_answer">
+          <input type="text" id="serq14" placeholder="정답을 입력하세요" />
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="serq15">
+        <div class="q_num">Q15</div>
+        <p class="q_text">
+          실행 중인 프로세스의 상태를 확인할 때, 백그라운드 프로세스를 포함하여
+          전체 시스템 프로세스를 자세히 보기 위해 사용하는 옵션 조합은
+          무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="serq15" value="1" /> 1. -al</label>
+          <label><input type="radio" name="serq15" value="2" /> 2. -ef"</label>
+          <label><input type="radio" name="serq15" value="3" /> 3. -aux</label>
+          <label><input type="radio" name="serq15" value="4" /> 4. -ls</label>
+        </div>
+      </div>
+    </div>
+    <div class="submit_box">
+      <button type="button" class="btn_submit" id="btn-submit">제출하기</button>
+    </div>
+
+    <div class="custom-modal-overlay" id="result-modal">
+      <div class="custom-modal">
+        <h2 id="modal-title">퀴즈 결과</h2>
+        <p id="modal-content">정답: -개 / 오답: -개</p>
+        <div class="custom-modal-buttons">
+          <button type="button" class="btn-close" id="btn-modal-close">
+            확인
+          </button>
+          <a href="wrong_notes.html" class="btn-wrong-notes"
+            >오답노트 바로가기</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+    <script src="/src/script/main.js"></script>
+    <script src="../../script/quiz.js"></script>
+  </body>
+</html>

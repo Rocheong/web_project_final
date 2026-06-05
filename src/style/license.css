@@ -1,0 +1,20 @@
+.license-container {
+  margin: 70px;
+  margin-bottom: 500px;
+}
+.license-container ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.license-icon {
+  width: 15px;
+  margin: 3px auto;
+}
+
+/* 원래 아이콘이 검은색인데 다른 색으로 바꿀 때 */
+.license-icon.mypage {
+  /* 예: 검은색 아이콘을 완전히 검은색으로 유지하거나 filter로 색상 제어 */
+  filter: brightness(0); /* 이미지를 완전한 검은색으로 만듦 */
+}

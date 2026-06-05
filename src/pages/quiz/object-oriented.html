@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/banner.css" />
+    <link rel="stylesheet" href="../../style/card.css" />
+    <link rel="stylesheet" href="../../style/question.css" />
+    <link rel="stylesheet" href="../../style/quiz.css" />
+  </head>
+  <body>
+    <div class="sticky-status-bar">
+      <div class="status-timer" id="timer-display">⏱️ 남은 시간 - 15:00</div>
+      <div class="status-progress-container">
+        <div class="status-progress-bar">
+          <div class="status-progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="status-progress-text" id="progress-text">0 / 15</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-left">
+        <a href="/index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="banner" id="main-banner">
+        <div class="banner-text" id="main-banner-text">
+          <h1>객체지향</h1>
+          <h3>
+            JAVA의 기본개념 및 응용 소프트웨어 개발에 적합한 언어 및 개발 환경의
+            습득과 소프트웨어 개발 훈련을 목표로 한다.<br />이를 위해 강의와
+            실습을 통하여 Java 프로그래밍의 이해, 객체-지향 프로그래밍 능력
+            배양, 프로그램 설계 능력 배양, 문제 해결 능력을 배양하는 것을 목표로
+            한다.<br />
+            또한 객체지향의 개념을 이해하고 이를 위해 자바 클래스의 기본적인
+            내용을 학습하며 클래스를 설계하고 활용할 수 있다.<br />
+            자바의 상속과 인터페이스에 대해 이해하고 이를 활용하여
+            프로그래밍에서의 코드 재사용성을 향상 시킬 수 있다.<br />
+            스레드의 개념을 이해하고 다중 스레드를 활용할 수 있다.<br />
+            AWT와 SWING을 학습하고 GUI에서의 이벤트 처리과정을 이해하여 GUI
+            프로그래밍을 할 수 있다.
+          </h3>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <span
+          >출제 범위 |
+          <span style="font-size: smaller">
+            자바_객체지향_특징, 자바실습
+          </span></span
+        >
+      </div>
+    </div>
+
+    <div class="question_list">
+      <div class="question_box" data-qnum="jq1">
+        <div class="q_num">Q1</div>
+        <p class="q_text">
+          객체지향 프로그래밍(OOP)에서 변수와 함수를 하나의 단위로 묶는 것을
+          무엇이라고 합니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq1" value="1" /> 1. 상속</label>
+          <label><input type="radio" name="jq1" value="2" /> 2. 추상화</label>
+          <label
+            ><input type="radio" name="jq1" value="3" /> 3. 정보 은닉</label
+          >
+          <label><input type="radio" name="jq1" value="4" /> 4. 캡슐화</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq2">
+        <div class="q_num">Q2</div>
+        <p class="q_text">
+          부모 클래스에서 물려받은 기능의 일부를 자식 클래스에서 재정의하여
+          사용하는 것을 무엇이라고 합니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq2" value="1" /> 1. 오버로딩</label>
+          <label
+            ><input type="radio" name="jq2" value="2" /> 2. 오버라이딩</label
+          >
+          <label><input type="radio" name="jq2" value="3" /> 3. 캡슐화</label>
+          <label><input type="radio" name="jq2" value="4" /> 4. 은닉화</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq3">
+        <div class="q_num">Q3</div>
+        <p class="q_text">
+          하나의 변수나 함수가 상황에 따라 여러 의미로 해석될 수 있는 성질을
+          무엇이라고 합니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq3" value="1" /> 1. 추상화</label>
+          <label><input type="radio" name="jq3" value="2" /> 2. 다형성</label>
+          <label><input type="radio" name="jq3" value="3" /> 3. 독립성</label>
+          <label><input type="radio" name="jq3" value="4" /> 4. 상속</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq4">
+        <div class="q_num">Q4</div>
+        <p class="q_text">
+          객체지향 프로그래밍에서 '역할'과 '구현'을 분리하여 유연한 설계를
+          가능하게 하는 핵심 개념은 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="jq4" value="1" /> 1. 정보 은닉</label
+          >
+          <label
+            ><input type="radio" name="jq4" value="2" /> 2. 단순 대입</label
+          >
+          <label
+            ><input type="radio" name="jq4" value="3" /> 3. 강제 다형성</label
+          >
+          <label><input type="radio" name="jq4" value="4" /> 4. 추상화</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq5">
+        <div class="q_num">Q5</div>
+        <p class="q_text">
+          자바 컴파일러(javac)에 의해 생성된 바이트코드를 해석하고 실행하는 가상
+          머신은 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq5" value="1" /> 1. JVM</label>
+          <label><input type="radio" name="jq5" value="2" /> 2. JIT</label>
+          <label><input type="radio" name="jq5" value="3" /> 3. JRE</label>
+          <label><input type="radio" name="jq5" value="4" /> 4. JDK</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq6">
+        <div class="q_num">Q6</div>
+        <p class="q_text">
+          문자열(String)과 숫자를 + 연산자로 결합하면 결과는 어떤 타입이 됩니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq6" value="1" /> 1. int</label>
+          <label><input type="radio" name="jq6" value="2" /> 2. double</label>
+          <label><input type="radio" name="jq6" value="3" /> 3. char</label>
+          <label><input type="radio" name="jq6" value="4" /> 4. string</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq7">
+        <div class="q_num">Q7</div>
+        <p class="q_text">
+          화면에 내용을 출력한 후 자동으로 줄을 바꿔주는 메소드는 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="jq7" value="1" /> 1.
+            System.in.read()</label
+          >
+          <label
+            ><input type="radio" name="jq7" value="2" /> 2.
+            System.out.print()</label
+          >
+          <label
+            ><input type="radio" name="jq7" value="3" /> 3.
+            System.out.printf()</label
+          >
+          <label
+            ><input type="radio" name="jq7" value="4" /> 4.
+            System.out.println()</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq8">
+        <div class="q_num">Q8</div>
+        <p class="q_text">
+          System.out.printf()에서 정수 값을 출력할 때 사용하는 형식 지정자는
+          무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq8" value="1" /> 1. %b</label>
+          <label><input type="radio" name="jq8" value="2" /> 2. %d</label>
+          <label><input type="radio" name="jq8" value="3" /> 3. %s</label>
+          <label><input type="radio" name="jq8" value="4" /> 4. %f</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq9">
+        <div class="q_num">Q9</div>
+        <p class="q_text">스캐너 클래스를 이용해 한 줄 전체를 읽어오는 방식</p>
+
+        <div class="q_choices">
+          <label
+            ><input type="radio" name="jq9" value="1" /> 1.
+            System.in.read</label
+          >
+          <label
+            ><input type="radio" name="jq9" value="2" /> 2.
+            System.out.print()</label
+          >
+          <label
+            ><input type="radio" name="jq9" value="3" /> 3. String.read()</label
+          >
+          <label
+            ><input type="radio" name="jq9" value="4" /> 4.
+            Scanner.nextLine()</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq10">
+        <div class="q_num">Q10</div>
+        <p class="q_text">
+          다음 연산자 중 피연산자가 하나만 필요한 '단항 연산자'는 무엇입니까?
+        </p>
+
+        <div class="q_choices">
+          <label><input type="radio" name="jq10" value="1" /> 1. ++</label>
+          <label><input type="radio" name="jq10" value="2" /> 2. ?:</label>
+          <label><input type="radio" name="jq10" value="3" /> 3. &&</label>
+          <label><input type="radio" name="jq10" value="4" /> 4. +</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq11">
+        <div class="q_num">Q11</div>
+        <p class="q_text">
+          다음 단항 연산자 중 값을 먼저 증가 시킨 후 연산을 시행하는 연산자는
+          무엇입니까?
+        </p>
+
+        <div class="q_choices">
+          <label><input type="radio" name="jq11" value="1" /> 1. ++a</label>
+          <label><input type="radio" name="jq11" value="2" /> 2. a++</label>
+          <label><input type="radio" name="jq11" value="3" /> 3. a—</label>
+          <label><input type="radio" name="jq11" value="4" /> 4. —a</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq12">
+        <div class="q_num">Q12</div>
+        <p class="q_text">
+          논리값의 상태를 반대로 뒤집는 논리 부정 연산자는 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq12" value="1" /> 1. !</label>
+          <label><input type="radio" name="jq12" value="2" /> 2. -</label>
+          <label><input type="radio" name="jq12" value="3" /> 3. ||</label>
+          <label><input type="radio" name="jq12" value="4" /> 4. &&</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq13">
+        <div class="q_num">Q13</div>
+        <p class="q_text">나머지를 구하는 산술 연산자는 무엇입니까?</p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq13" value="1" /> 1. /</label>
+          <label><input type="radio" name="jq13" value="2" /> 2. %</label>
+          <label><input type="radio" name="jq13" value="3" /> 3. *</label>
+          <label><input type="radio" name="jq13" value="4" /> 4. &</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq14">
+        <div class="q_num">Q14</div>
+        <p class="q_text">
+          두 피연산자중 하나만 true일 때만 결과가 true가 되는 논리 연산자는
+          무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq14" value="1" /> 1. ||</label>
+          <label><input type="radio" name="jq14" value="2" /> 2. ^</label>
+          <label><input type="radio" name="jq14" value="3" /> 3. &&</label>
+          <label><input type="radio" name="jq14" value="4" /> 4. !</label>
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="jq15">
+        <div class="q_num">Q15</div>
+        <p class="q_text">
+          자바에서 한 줄 주석을 작성할 때 사용하는 기호는 무엇입니까?
+        </p>
+        <div class="q_choices">
+          <label><input type="radio" name="jq15" value="1" /> 1. #</label>
+          <label><input type="radio" name="jq15" value="2" /> 2. //</label>
+          <label><input type="radio" name="jq15" value="3" /> 3. /** */</label>
+          <label><input type="radio" name="jq15" value="4" /> 4. /* */</label>
+        </div>
+      </div>
+    </div>
+    <div class="submit_box">
+      <button type="button" class="btn_submit" id="btn-submit">제출하기</button>
+    </div>
+
+    <div class="custom-modal-overlay" id="result-modal">
+      <div class="custom-modal">
+        <h2 id="modal-title">퀴즈 결과</h2>
+        <p id="modal-content">정답: -개 / 오답: -개</p>
+        <div class="custom-modal-buttons">
+          <button type="button" class="btn-close" id="btn-modal-close">
+            확인
+          </button>
+          <a href="wrong_notes.html" class="btn-wrong-notes"
+            >오답노트 바로가기</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+    <script src="/src/script/main.js"></script>
+    <script src="../../script/quiz.js"></script>
+  </body>
+</html>

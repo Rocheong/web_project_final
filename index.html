@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style/style.css" />
+    <link rel="stylesheet" href="/src/style/home.css" />
+    <link rel="stylesheet" href="/src/style/card.css" />
+  </head>
+
+  <body class="main-page">
+    <!-- ✅ HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <a href="/index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <!-- ✅ 배경 -->
+    <div class="bg"></div>
+
+    <!-- ✅ HERO -->
+    <section class="hero page">
+      <div class="hero-content">
+        <h1>정보보호학전공 학생들을 위한 학습 플랫폼</h1>
+        <p>나에게 맞는 학습을 탐색하고 성장하세요</p>
+
+        <a href="./src/pages/learn.html" class="hero-btn"> 지금 시작하기 → </a>
+      </div>
+    </section>
+
+    <!-- ✅ 학습 -->
+    <section class="section page" id="learn">
+      <h2>학습</h2>
+      <p>정보보호 필수 분야를 단계적으로 학습하세요</p>
+
+      <div class="big-card">
+        <a href="/src/pages/learn.html" class="card">
+          <div class="card-image bg-blue">
+            <h3>네트워크</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">
+              TCP/IP 구조와 인터넷 통신 원리 완전 이해
+            </div>
+            <div class="card-tags">
+              <span class="tag">OSI 7계층</span>
+              <span class="tag tag-essential">HTTP</span>
+              <span class="tag">DNS</span>
+              <span class="tag">패킷</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/src/pages/learn.html" class="card">
+          <div class="card-image bg-green">
+            <h3>보안</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">암호학과 시스템 보안 기본 개념 학습</div>
+            <div class="card-tags">
+              <span class="tag">대칭/비대칭</span>
+              <span class="tag tag-tier">취약점</span>
+              <span class="tag">인증</span>
+              <span class="tag">권한</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/src/pages/learn.html" class="card">
+          <div class="card-image bg-violet">
+            <h3>웹 해킹</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">실제 공격 기법 기반 웹 취약점 분석</div>
+            <div class="card-tags">
+              <span class="tag tag-choice">XSS</span>
+              <span class="tag tag-choice">SQLi</span>
+              <span class="tag">CSRF</span>
+              <span class="tag">실습</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ✅ 퀴즈 -->
+    <section class="section page" id="quiz">
+      <h2>퀴즈</h2>
+      <p>문제 풀이를 통해 이해도를 높이고 실력을 검증하세요</p>
+
+      <div class="big-card">
+        <a href="/src/pages/quiz/quizzes.html" class="card">
+          <div class="card-image bg-blue">
+            <h3>기초 문제</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">핵심 개념 복습과 초급 실력 점검</div>
+            <div class="card-tags">
+              <span class="tag tag-essential">입문</span>
+              <span class="tag">개념</span>
+              <span class="tag">복습</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/src/pages/quiz/quizzes.html" class="card">
+          <div class="card-image bg-green">
+            <h3>실전 문제</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">응용력을 요구하는 중급 수준 문제</div>
+            <div class="card-tags">
+              <span class="tag tag-tier">중급</span>
+              <span class="tag">응용</span>
+              <span class="tag">사고력</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://ctftime.org/" class="card" target="_blank">
+          <div class="card-image bg-violet">
+            <h3>CTF</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">실제 해킹 환경 기반 문제 해결</div>
+            <div class="card-tags">
+              <span class="tag tag-choice">CTF</span>
+              <span class="tag">실습</span>
+              <span class="tag">해킹</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ✅ 추천 -->
+    <section class="section page" id="recommend">
+      <h2>추천 학습</h2>
+      <p>검증된 플랫폼에서 실력을 더욱 성장시켜보세요</p>
+
+      <div class="big-card">
+        <a href="https://www.kisa.or.kr" class="card" target="_blank">
+          <div class="card-image bg-blue">
+            <h3>KISA</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">
+              국가 공인 보안 교육 및 자료 제공 플랫폼
+            </div>
+            <div class="card-tags">
+              <span class="tag">공공기관</span>
+              <span class="tag tag-essential">보안 교육</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://dreamhack.io" class="card" target="_blank">
+          <div class="card-image bg-violet">
+            <h3>Dreamhack</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">CTF 기반 실습 중심 해킹 학습 환경</div>
+            <div class="card-tags">
+              <span class="tag tag-choice">CTF</span>
+              <span class="tag">웹 해킹</span>
+              <span class="tag">실습</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://programmers.co.kr" class="card" target="_blank">
+          <div class="card-image bg-green">
+            <h3>Programmers</h3>
+          </div>
+          <div class="card-info">
+            <div class="card-title">
+              코딩 테스트 및 알고리즘 문제 풀이 플랫폼
+            </div>
+            <div class="card-tags">
+              <span class="tag">알고리즘</span>
+              <span class="tag tag-tier">문제풀이</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ✅ TOP 버튼 -->
+    <button id="topBtn">↑</button>
+
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+    <script src="/src/script/main.js"></script>
+    <script src="/src/script/home.js"></script>
+  </body>
+</html>

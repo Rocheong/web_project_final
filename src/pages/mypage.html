@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/mypage.css" />
+    <script>
+      // 로그인 상태가 아니면 즉시 로그인 페이지로 이동 (깜빡임 방지)
+      // mypage 직접 접근 방지: 로그인되지 않았다면 로그인 페이지로 이동
+      if (!sessionStorage.getItem('loggedInUser')) {
+        alert('로그인 후 이용 가능한 페이지입니다.')
+        setTimeout(() => {
+          location.href = './login.html'
+        }, 100)
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="/index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="mypage-container">
+        <h1>마이 페이지</h1>
+        <p id="welcome"></p>
+        <div class="mypage-section-top">
+          <section class="note-section">
+            <h2>나의 메모</h2>
+            <textarea
+              id="note-input"
+              placeholder="메모를 입력하세요."
+            ></textarea>
+            <button id="save-note">메모 저장</button>
+            <div id="note-display" class="note-display">
+              저장된 메모가 없습니다.
+            </div>
+          </section>
+
+          <section class="todo-section">
+            <h2>할 일</h2>
+            <div class="todo-input-row">
+              <input
+                id="todo-input"
+                type="text"
+                placeholder="새 할 일을 입력하세요."
+              />
+              <button id="add-todo">추가</button>
+            </div>
+            <ul id="todo-list" class="todo-list"></ul>
+          </section>
+        </div>
+        <div class="mypage-section-bottom">
+          <section class="review-notes">
+            <h2>오답 노트</h2>
+            <div id="review-notes-list" class="review-notes-list">
+              <div class="review-note-empty">저장된 오답이 없습니다.</div>
+            </div>
+          </section>
+        </div>
+        <div class="bottom-link">
+          <a href="./license.html">저작권</a>
+          <button id="logout-button">로그아웃</button>
+        </div>
+      </div>
+    </div>
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+    <script src="/src/script/main.js"></script>
+    <script src="../script/mypage.js"></script>
+  </body>
+</html>

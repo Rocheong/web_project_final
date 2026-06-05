@@ -1,0 +1,160 @@
+/* ✅ 오답노트 전용 카드 */
+.card,
+.note {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+/* 제목 중앙 */
+h1 {
+  text-align: center;
+}
+
+/* 입력 UI */
+textarea,
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* 입력 높이 */
+textarea {
+  min-height: 100px;
+}
+
+input {
+  height: 45px;
+}
+
+/* ✅ 상태 */
+.error {
+  border: 2px solid #ff4d4f;
+}
+
+.success {
+  border: 2px solid #2ecc71;
+}
+
+/* ✅ 버튼 기본 정리 (중요🔥) */
+button {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  border-radius: 14px; /* ✅ 완전 둥글 */
+  margin-right: 8px;
+
+  transition: 0.15s ease;
+}
+
+/* hover */
+button:hover {
+  opacity: 0.9;
+}
+
+/* 눌리는 효과 */
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ 버튼 색 */
+.primary {
+  background: #6c63ff;
+  color: white;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+.edit-btn {
+  background: orange;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+.delete-btn {
+  background: #ff4d4f;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 77, 79, 0.3);
+}
+
+/* ✅ 클릭하면 그림자 줄어듦 */
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ 모달 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ 모달 카드 */
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: popup 0.25s ease;
+}
+
+/* TIP 텍스트 */
+#tipText {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+/* 버튼 그룹 */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.top-tittle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  margin: 80px auto 20px;
+}
+
+/* 애니메이션 */
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

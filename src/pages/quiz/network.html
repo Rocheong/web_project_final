@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/banner.css" />
+    <link rel="stylesheet" href="../../style/card.css" />
+    <link rel="stylesheet" href="../../style/question.css" />
+    <link rel="stylesheet" href="../../style/quiz.css" />
+  </head>
+  <body>
+    <div class="sticky-status-bar">
+      <div class="status-timer" id="timer-display">⏱️ 남은 시간 - 15:00</div>
+      <div class="status-progress-container">
+        <div class="status-progress-bar">
+          <div class="status-progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="status-progress-text" id="progress-text">0 / 15</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-left">
+        <a href="/index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="banner" id="main-banner">
+        <div class="banner-text" id="main-banner-text">
+          <h1>네트워크보안</h1>
+          <h3>
+            본 교과목은 네트워크를 처음 접하는 학생을 대상으로 네트워크 보안의
+            기초가 되는 네트워크 구조, 데이터 통신 원리, 프로토콜 동작 방식을
+            이해하는 것을 목표로 한다.
+            <br />본 학기에는 보안 기술을 직접적으로 적용하기 보다는 네트워크
+            전반의 개념과 동작 원리를 체계적으로 학습함으로써<br />향후 심화된
+            보안 학습을 위해 기초 역량을 함양하는 데 중점을 둔다.
+          </h3>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <span
+          >출제 범위 |
+          <span style="font-size: smaller"
+            >네트워크 기초, 네트워크 개념, 네트워크 기술, 데이터 전송, MAC
+            계층</span
+          ></span
+        >
+      </div>
+    </div>
+
+    <div class="question_list">
+      <div class="question_box" data-qnum="net1">
+        <div class="q_num">q1</div>
+        <p class="q_text">
+          네트워크의 기초 용어에 대한 설명으로 옳은 것을 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net1" value="1" /> 1. 네트워크는
+            하드웨어적인 전송 매체를 매개로 서로 연결되어 데이터를 교환하는
+            시스템의 모음이다.</label
+          >
+          <label
+            ><input type="checkbox" name="net1" value="2" /> 2. 시스템과 전송
+            매체의 연결 지점에 대한 규격이 프로토콜이다.</label
+          >
+          <label
+            ><input type="checkbox" name="net1" value="3" /> 3. 시스템이
+            데이터를 교환할 때는 소프트웨어적으로 동작하는 통신 규칙인
+            인터페이스가 필요하다.</label
+          >
+          <label
+            ><input type="checkbox" name="net1" value="4" /> 4. 인터페이스와
+            프로토콜은 서로 다른 시스템을 상호 연동해 동작시키기 위함이니, 연동
+            형식의 통일은 필요하지 않다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net2">
+        <div class="q_num">q2</div>
+        <p class="q_text">프로토콜에 대한 설명으로 옳은 것을 고르시오.</p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net2" value="1" /> 1. 논리적으로 상호
+            연동되는 시스템이 전송 매체를 통해 데이터를 교환할 때는 표준화된
+            대화 규칙을 따른다.</label
+          >
+          <label
+            ><input type="checkbox" name="net2" value="2" /> 2. 일반적으로
+            인터페이스는 상하 관계가 아닌 동등한 위치에 있는 시스템 사이의
+            규칙이다.</label
+          >
+          <label
+            ><input type="checkbox" name="net2" value="3" /> 3. 프로토콜은 두
+            시스템이 연동하기 위한 특정한 접촉 지점을 의미하는 경우가 많지만,
+            인터페이스와 비교하여 인용될 때는 상하 개념이 적용된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net2" value="4" /> 4. 인터페이스는
+            주고받는 데이터의 형식과 그 과정에서 발생하는 일련의 절차적 순서에
+            무게를 둔다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net3">
+        <div class="q_num">Q3</div>
+        <p class="q_text">시스템에 대한 설명으로 잘못된 것을 모두 고르시오.</p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net3" value="1" /> 1. 노드는 컴퓨터
+            이론 분야에서 특정 시스템을 가리키는 가장 일반적인 용어로
+            사용된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net3" value="2" /> 2. 노드는 인터넷
+            내부를 구성하는 라우터와 인터넷 바깥쪽에 연결되어 데이터를 주고받는
+            호스트로 구분된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net3" value="3" /> 3. 라우터는
+            기본으로 데이터 전송 기능을 포함한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net3" value="4" /> 4. 라우터의 주요
+            역할은 데이터 중개 기능이며, 인터넷 바깥쪽에 연결된 호스트들 사이의
+            데이터 전송이 인터넷 내부에서 최적의 경로를 통하여 이루어지도록
+            한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net3" value="5" /> 5. 호스트는 인터넷
+            바깥쪽에 연결되어 일반 사용자들의 네트워크 접속 창구 역할을
+            한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net3" value="6" /> 6. 호스트는 호스트
+            사이에 제공되는 서비스를 기준으로 크라이언트와 서버로 나눌 수
+            있다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net4">
+        <div class="q_num">Q4</div>
+        <p class="q_text">모듈화에 대한 설명으로 올바른 것을 모두 고르시오.</p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net4" value="1" /> 1. 복잡한 시스템을
+            기능별로 모듈화하면 시스템 구조가 단순해져서 전체 시스템을 이해하기
+            쉽다.</label
+          >
+          <label
+            ><input type="checkbox" name="net4" value="2" /> 2. 일반 프로그래밍
+            언어에서는 함수 개념을 사용해 전체 프로그램을 모듈화할 수
+            있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net4" value="3" /> 3. 함수 사이의
+            인터페이스는 함수의 매개변수에 의해서만 이루어지므로 전체 시스템을
+            이해하기가 훨씬 쉽다.</label
+          >
+          <label
+            ><input type="checkbox" name="net4" value="4" /> 4. 각 모듈은 정해진
+            인터페이스에 맞게 유기적으로 연결되어야 한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net4" value="5" /> 5. 모듈 구조는 서로
+            동등한 위치에서 서비스를 주고받을 수도 있고, 특정 모듈이 다른 모듈에
+            서비스를 제공하는 형식의 계층 구조를 이루기도 한다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net5">
+        <div class="q_num">Q5</div>
+        <p class="q_text">
+          계층 구조에 대한 설명으로 올바른 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net5" value="1" /> 1. 네트워크에서는
+            독립적인 고유 기능을 수행하는 모듈들이 상하 계층 구조로 연결되어
+            동작한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net5" value="2" /> 2. 계층 구조에서는
+            상위 계층이 하위 계층에 특정 서비스를 요청하는 방식으로
+            동작한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net5" value="3" /> 3. 네트워크에서
+            통신하는 시스템들은 계층 구조로 모듈화된 기능이 각각 동작한다. 이때
+            둘 사이의 같은 계층끼리 데이터를 전달하는데, 이러한 전달 규칙을
+            인터페이스라 한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net5" value="4" /> 4. 상하 계층에
+            인접한 모듈 사이의 프로토콜을 포함하여 분할된 모듈이 연동할 수 있는
+            표준 프로토콜을 제공한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net5" value="5" /> 5. 전송 매체 양단에
+            있는 호스트가 수행하는 인터페이스들은 좌우 비대칭 구조이다.</label
+          >
+          <label
+            ><input type="checkbox" name="net5" value="6" /> 6. 개별 계층의 기능
+            오류를 수정하거나 향상시켜야 하는 경우에 전체 시스템을 재작성하지
+            않고 해당 계층의 모듈만 교체하면 된다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net6">
+        <div class="q_num">Q6</div>
+        <p class="q_text">
+          프로토콜 설계 시 주소 표현에 대한 설명으로 올바른 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net6" value="1" /> 1. 여러 호스트가
+            연결된 환경에서 특정 호스트끼리 통신하려면 상대방을 구분할 수 있는
+            방법이 필요하다.</label
+          >
+          <label
+            ><input type="checkbox" name="net6" value="2" /> 2. 보통 호스트마다
+            주소를 하나씩 부여하지만, 다수의 호스트를 묶어 하나의 그룹 주소로
+            표기하기도 한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net6" value="3" /> 3. 일대다 통신의
+            대표적인 유형은 네트워크에 연결된 모든 호스트에 데이터를 전송할 수
+            있는 멀티캐스팅 표기 방법이다</label
+          >
+          <label
+            ><input type="checkbox" name="net6" value="4" /> 4. 특정 사용자를
+            그룹으로 묶어서 지징하는 브로드캐스팅 표기 방법이 있다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net7">
+        <div class="q_num">Q7</div>
+        <p class="q_text">
+          라우팅 기능에 대한 설명으로 잘못된 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net7" value="1" /> 1. 네트워크 양단에
+            연결된 호스트들이 전송하는 데이터는 전송 경로 중간에 위치한 라우팅
+            시스템을 거친다.</label
+          >
+          <label
+            ><input type="checkbox" name="net7" value="2" /> 2. 라우팅 시스템은
+            데이터를 최종 목적지까지 올바른 경로로 중개하는 교환 기능을
+            제공한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net7" value="3" /> 3. 회선 교환
+            시스템은 고정 대역으로 할당된 연결을 설정하여 데이터 전송을
+            시작한다. 따라서 회선에 할당된 고정 크기의 안정적인 전송률로
+            데이터를 전송할 수 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net7" value="4" /> 4. 패킷 교환
+            시스템은 컴퓨터 네트워크 환경에서 주로 이용한다. 데이터를 미리 패킷
+            단위로 나누어 전송하므로 패킷을 기준으로 라우팅이 이루어진다.</label
+          >
+          <label
+            ><input type="checkbox" name="net7" value="5" /> 5. 회선 교환에는
+            모든 패킷의 경로를 일정하게 유지시키는 가상 회선 방식과 패킷들이
+            각각의 경로로 전송되는 데이터그램 방식이 있다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net8">
+        <div class="q_num">Q8</div>
+        <p class="q_text">
+          패킷 교환 방식의 장점에 대한 설명으로 잘못된 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net8" value="1" /> 1. 인터넷에서
+            사용하는 패킷 교환 시스템의 장점은 전송 대역의 효율적 이용, 호스트의
+            무제한 수용, 패킷에 우선순위 부여라는 세 가지로 요약할 수
+            있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net8" value="2" /> 2. 여러 호스트에서
+            전송한 패킷들이 동적인 방식으로 전송 대역을 공유하기 때문에 전송
+            선로의 이용 효율을 극대화할 수 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net8" value="3" /> 3. 패킷 교환
+            방식에서는 전송 대역이 부족해 연결 설정 요청을 수용하지 못하는
+            경우란 없다. 임의의 연결 요청에 고정 대역을 할당하지 않으므로 이론상
+            호스트를 무한히 수용할 수 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net8" value="4" /> 4. 데이터의 전송
+            작업이 패킷 단위로 이루어져 패킷에 우선순위를 부여하기 편리하다. 즉,
+            특정 호스트가 전송하는 패킷들을 먼저 전송할 패킷과 나중에 전송해도
+            되는 패킷으로 구분하여 선택적으로 우선순위를 부여할 수 있다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net9">
+        <div class="q_num">Q9</div>
+        <p class="q_text">
+          가상 회선 방식에 대한 설명으로 잘못된 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net9" value="1" /> 1. 데이터를 회선
+            교환 방식으로 전송하는 네트워크는 가상 회선과 데이터그램이라는 두
+            가지 전송 방식을 지원한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net9" value="2" /> 2. 가상회선 방식은
+            데이터를 패킷 단위로 나누어 전송하며 송수신 호스트 사이에 가상
+            연결을 지원하므로 모든 패킷의 전달 경로가 다를 수 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net9" value="3" /> 3. 가상 회선 방식은
+            연결형 서비스를 지원하기 위한 기능으로, 미리 설정된 논리적인 연결을
+            통해 데이터를 전송한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net9" value="4" /> 4. 패킷의 도착
+            순서는 반드시 송신 순서와 일치하는 것은 아니다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net10">
+        <div class="q_num">Q10</div>
+        <p class="q_text">
+          CSS `font-family` 전송과 라우팅에 대한 설명으로 올바른 것을 모두
+          고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net10" value="1" /> 1. 송신 호스트가
+            수신 호스트에 데이터를 전달하려면 전송과 교환 과정을 거쳐야
+            한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net10" value="2" /> 2. 교환은 전달
+            경로가 둘 이상일 때 라우터에서 데이터를 어느 방향으로 전달할지를
+            선택하는 기능이다.</label
+          >
+          <label
+            ><input type="checkbox" name="net10" value="3" /> 3. 컴퓨터
+            네트워크에서는 교환 대신 라우팅이라는 용어가 보편적으로
+            사용된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net10" value="4" /> 4. 전송은 특정한
+            물리 매체에 의하여 일대일로 직접 연결된 두 시스템 간의 신뢰성 있는
+            데이터 전송을 보장하기 위한 것이다. 전송에는 라우팅 개념이
+            포함된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net10" value="5" /> 5. 올바른 경로을
+            선택하기 위해 라우팅 기능을 수행하는 호스트를 라우터라 하며, 경로
+            선택과 관련된 정보를 라우팅 테이블에 저장하여 관리한다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net11">
+        <div class="q_num">Q11</div>
+        <p class="q_text">
+          전송 방식에 대한 설명으로 올바른 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net11" value="1" /> 1. 각 호스트를
+            일대일로 직접 연결하는 방식으로 네트워크를 구성하고 특정한 수신
+            호스트에만 데이터를 전송하는 방식을 점대점 방식이라 한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net11" value="2" /> 2. 네트워크에
+            연결된 모든 호스트에 데이터를 전송하는 방식을 브로드캐스팅이라
+            한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net11" value="3" /> 3. 점대점 방식은
+            근거리에 있는 호스트 사이의 통신 방식으로, LAN 환경에서 주로
+            사용한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net11" value="4" /> 4. 점대점
+            방식에서는 공유 전송 매체 하나에 여러 호스트를 연결하기 때문에
+            네트워크에 연결된 모든 호스트에 데이터가 전송된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net11" value="5" /> 5. 브로드캐스팅
+            방식에서 자신을 목적지로 하지 않는 데이터를 받은 호스트는 받은
+            데이터를 버려 결국 하나의 수신 호스트만 데이터를 수신하도록 설계해야
+            한다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net12">
+        <div class="q_num">Q12</div>
+        <p class="q_text">
+          점대점 방식에 대한 설명으로 올바른 것을 모두 고르시오
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net12" value="1" /> 1. 점대점 방식
+            네트워크에서는 라우팅 호스트가 송수신 호스트의 중간에
+            위치한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net12" value="2" /> 2. 대표적인 점대점
+            방식으로 스타형, 링형, 완전형, 불규칙형이 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net12" value="3" /> 3. 통신하고자 하는
+            두 호스트가 직접 연결되어 있으면 별도의 라우팅 과정 없이 직접
+            데이터를 전송할 수 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net12" value="4" /> 4. 점대점 방식은
+            LAN 환경과 같은 근거리 호스트를 연결할 때 사용한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net12" value="5" /> 5. 네트워크
+            트래픽이 많이 발생하는 구간에서는 전송 매체의 수를 늘리고, 그렇지
+            않은 구간에서는 줄이는 방식으로 네트워크가 확장되기 때문에 스타형의
+            구조가 일반적이다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net13">
+        <div class="q_num">Q13</div>
+        <p class="q_text">
+          MAC 계층에 대한 설명으로 잘못된 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net13" value="1" /> 1. LAN 환경에서는
+            WAN 환경보다 효율적인 전송 관리를 통해 네트워크의 전송 효율을
+            극대화해야 한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net13" value="2" /> 2. IEEE 802
+            시리즈는 공통 기능인 LLC 계층뿐 아니라 다양한 MAC 계층에 대한
+            표준안을 정의하고 있다.</label
+          >
+          <label
+            ><input type="checkbox" name="net13" value="3" /> 3. MAC 계층은 전송
+            선로의 물리적인 특성을 반영하므로 WAN의 종류에 따라 특성이
+            구분된다.</label
+          >
+          <label
+            ><input type="checkbox" name="net13" value="4" /> 4. 토큰 버스를
+            이용해 호스트를 연결하는 CSMA/CD 방식을 지원한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net13" value="5" /> 5. 토큰 링 방식은
+            공유 버스의 순환 구조를 지원하며, 토큰이라는 특정 패턴의 제어
+            프레임이 링을 순환한다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net14">
+        <div class="q_num">Q14</div>
+        <p class="q_text">
+          LLC 계층에 대한 설명으로 잘못된 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net14" value="1" /> 1. OSI 7계층
+            모델에서 정의한 네트워크 계층의 기본 기능은 주로 LLC 계층에서
+            다룬다.</label
+          >
+          <label
+            ><input type="checkbox" name="net14" value="2" /> 2. LAN 환경에서
+            LLC 계층은 WAN 환경의 네트워크 계층과 기능이 유사하다.</label
+          >
+          <label
+            ><input type="checkbox" name="net14" value="3" /> 3. LLC 계층은
+            송수신 호스트 사이의 프레임 전송 과정에서 물리적인 오류가 발생하면
+            이를 복구하는 작업을 한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net14" value="4" /> 4. LLC 계층에는
+            데이터 변형, 데이터 분실 등에 관한 오류 제어와 송수신 호스트 사이의
+            속도 차이에 관한 흐름 제어 등의 기능이 필요하다.</label
+          >
+        </div>
+      </div>
+
+      <div class="question_box" data-qnum="net15">
+        <div class="q_num">Q15</div>
+        <p class="q_text">
+          IEEE 802 시리즈에 대한 설명으로 잘못된 것을 모두 고르시오.
+        </p>
+        <div class="q_choices">
+          <label
+            ><input type="checkbox" name="net15" value="1" /> 1. 국제 표준화
+            단체인 IEEE에서 데이터 링크 계층과 관련된 다양한 LAN 표준안 연구
+            결과를 IEEE 802 시리즈로 발표하였다.</label
+          >
+          <label
+            ><input type="checkbox" name="net15" value="2" /> 2. IEEE 802.1은
+            상위 계층인 네트워크 계층의 표준안을 소개하고 인터페이스
+            프리미티브에 대한 정의를 다룬다.</label
+          >
+          <label
+            ><input type="checkbox" name="net15" value="3" /> 3. IEEE 802.2는
+            데이터 링크 계층의 상위 부분인 LLC 프로토콜의 정의를 다룬다.</label
+          >
+          <label
+            ><input type="checkbox" name="net15" value="4" /> 4. IEEE 802.3은
+            CSMA/CD 방식, IEEE 802.4는 토큰 버스 방식, IEEE 802.5는 토큰 링
+            방식에 관한 내용을 규정한다.</label
+          >
+          <label
+            ><input type="checkbox" name="net15" value="5" /> 5. CSMA/CD, 토큰
+            버, 토큰 링의 IEEE 시리즈는 모두 무선 환경에 대한 표준안이다.</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="submit_box">
+      <button type="button" class="btn_submit" id="btn-submit">제출하기</button>
+    </div>
+
+    <div class="custom-modal-overlay" id="result-modal">
+      <div class="custom-modal">
+        <h2 id="modal-title">퀴즈 결과</h2>
+        <p id="modal-content">정답: -개 / 오답: -개</p>
+        <div class="custom-modal-buttons">
+          <button type="button" class="btn-close" id="btn-modal-close">
+            확인
+          </button>
+          <a href="wrong_notes.html" class="btn-wrong-notes"
+            >오답노트 바로가기</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+
+    <script src="/src/script/main.js"></script>
+    <script src="../../script/quiz.js"></script>
+  </body>
+</html>

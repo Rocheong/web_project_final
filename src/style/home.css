@@ -1,0 +1,212 @@
+/* =========================/* ================= main 페이지 전용 설정
+========================= */
+body.main-page {
+  background: #ffffff;
+  color: #111;
+  scroll-snap-type: y mandatory;
+}
+
+/* =========================
+   ✅ 배경 (Blob 애니메이션)
+========================= */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg::before,
+.bg::after {
+  content: '';
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(100px);
+
+  background: radial-gradient(circle, #6c63ff, transparent);
+  animation: moveBlob 8s infinite ease-in-out;
+}
+
+.bg::after {
+  left: 60%;
+  top: 50%;
+  background: radial-gradient(circle, #8b5cf6, transparent);
+  animation-duration: 10s;
+}
+
+@keyframes moveBlob {
+  0% {
+    transform: translate(-30%, -30%) scale(1);
+  }
+  50% {
+    transform: translate(30%, 20%) scale(1.25);
+  }
+  100% {
+    transform: translate(-30%, -30%) scale(1);
+  }
+}
+
+/* =========================
+   ✅ 페이지 구조
+========================= */
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+/* =========================
+   ✅ HERO
+========================= */
+.hero {
+  padding-top: 80px;
+  height: calc(100vh - 80px); /* navbar 제외한 전체 높이 */
+
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+}
+
+.hero-content {
+  margin: 0; /* 기존 margin 제거 */
+  text-align: center; /* 텍스트 중앙 */
+}
+
+.hero h1 {
+  font-size: 64px;
+}
+
+.hero p {
+  font-size: 30px;
+  margin: 20px 0 30px;
+  color: #787777;
+}
+
+.hero-btn {
+  padding: 12px 20px;
+  background: #6c63ff;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.hero-btn:hover {
+  background: #574fe8;
+}
+
+/* =========================
+   ✅ ✅ 카드 wrapper (추가된 핵심)
+========================= */
+.big-card {
+  margin-top: 30px;
+  padding: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ card.css hover 살짝 강화 */
+.big-card .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
+}
+
+/* =========================
+   ✅ 텍스트 애니메이션 (수정됨)
+========================= */
+.section h2,
+.section > p {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.section h2.show,
+.section > p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   ✅ TOP 버튼
+========================= */
+#topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  background: #6c63ff;
+  color: white;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+
+#topBtn:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   ✅ 메인 페이지 header 투명
+========================= */
+body.main-page header {
+  background: transparent;
+  border-bottom: none;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ✅ 글자 색 */
+body.main-page .logo {
+  color: #111;
+}
+
+body.main-page .nav-links {
+  color: #111;
+}
+
+/* ✅ 카드 애니메이션 (필수) */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section > p {
+  font-size: 18px;
+  color: #787777;
+}
+.card {
+  text-align: left;
+}
