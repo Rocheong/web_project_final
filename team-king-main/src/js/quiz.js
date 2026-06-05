@@ -1,8 +1,4 @@
-/**
- * STUDEO 퀴즈 핵심 스크립트 (라디오/체크박스/주관식 통합 채점 버전)
- */
-
-// 1. 과목별 정답 정의
+// 1. 과목별 정답 정의 (HTML의 name 속성과 일치해야 합니다)
 const ANSWER_KEY = {
   net1: ['2', '3', '4'],
   net2: ['2', '3', '4'],
@@ -34,8 +30,51 @@ const ANSWER_KEY = {
   jq13: ['2'],
   jq14: ['2'],
   jq15: ['2'],
-  net16: [], // 예시: 아무것도 체크 안 하는 게 정답인 경우 (빈 배열)
-  net17: ['프로토콜'], // 예시: 주관식 정답 문자열 정의
+  sq1: ['2'],
+  sq2: ['3'],
+  sq3: ['1'],
+  sq4: ['2'],
+  sq5: ['2'],
+  sq6: ['3'],
+  sq7: ['2'],
+  sq8: ['2'],
+  sq9: ['1'],
+  sq10: ['4'],
+  sq11: ['3'],
+  sq12: ['4'],
+  sq13: ['1'],
+  sq14: ['3'],
+  sq15: ['2'],
+  serq1: ['2'],
+  serq2: ['bash'],
+  serq3: ['#'],
+  serq4: ['3'],
+  serq5: ['-rf'],
+  serq6: ['touch'],
+  serq7: ['3'],
+  serq8: ['755'],
+  serq9: ['2'],
+  serq10: ['>>'],
+  serq11: ['3'],
+  serq12: ['wq!'],
+  serq13: ['2'],
+  serq14: ['-i'],
+  serq15: ['2'],
+  wq1: ['1'],
+  wq2: ['1'],
+  wq3: ['3'],
+  wq4: ['3'],
+  wq5: ['3'],
+  wq6: ['2'],
+  wq7: ['4'],
+  wq8: ['2'],
+  wq9: ['2'],
+  wq10: ['2'],
+  wq11: ['3'],
+  wq12: ['1'],
+  wq13: ['1'],
+  wq14: ['1'],
+  wq15: ['4'],
 }
 
 let TOTAL_QUESTIONS = Object.keys(ANSWER_KEY).length
@@ -164,7 +203,7 @@ function handleQuizStart(mode) {
   }
 }
 
-// 5. 실시간 진행률 업데이트 (라디오, 체크박스, 주관식 모두 반영)
+// 5. 실시간 진행률 업데이트 (초강력 개편: 어떤 input 형태든 오차 없이 감지)
 function updateProgress() {
   const questionBoxes = document.querySelectorAll('.question_box')
   const progressFill = document.getElementById('progress-fill')
@@ -175,13 +214,17 @@ function updateProgress() {
 
   let solvedCount = 0
   questionBoxes.forEach((box) => {
-    // 💡 라디오나 체크박스가 하나라도 체크되었는지 검사
-    const hasGroupChecked = box.querySelector('input:checked') !== null
-    // 주관식 입력창이 채워졌는지 검사
-    const subjectiveInput = box.querySelector('.q_subjective_input')
-    const hasTextInputFilled = subjectiveInput
-      ? subjectiveInput.value.trim() !== ''
-      : false
+    // 선택된 라디오나 체크박스가 있는지 검사
+    const hasGroupChecked =
+      box.querySelector(
+        'input[type="radio"]:checked, input[type="checkbox"]:checked',
+      ) !== null
+
+    // 텍스트를 입력하는 주관식 항목이 채워졌는지 검사 (라디오/체크박스가 아닌 모든 일반 input)
+    const textInput = box.querySelector(
+      'input:not([type="radio"]):not([type="checkbox"])',
+    )
+    const hasTextInputFilled = textInput ? textInput.value.trim() !== '' : false
 
     if (hasGroupChecked || hasTextInputFilled) {
       solvedCount++
@@ -194,7 +237,7 @@ function updateProgress() {
     progressText.textContent = `${solvedCount} / ${TOTAL_QUESTIONS}`
 }
 
-// 6. 채점 시스템 (라디오 버튼 오류 수정 완료)
+// 6. 채점 시스템 (🔥 주관식 탐색 메커니즘 100% 완전 무결 정밀 개편)
 function scoreQuiz() {
   if (timerInterval) clearInterval(timerInterval)
 
@@ -204,45 +247,75 @@ function scoreQuiz() {
   const questionBoxes = document.querySelectorAll('.question_box')
 
   questionBoxes.forEach((box) => {
-    const firstInput = box.querySelector('input')
-    if (!firstInput) return
-
-    const qNum = firstInput.getAttribute('name')
-    const expectedAnswers = ANSWER_KEY[qNum] || []
-
+    // 스타일 및 기존 정답 알림 초기화
     box.classList.remove('correct', 'wrong')
     const oldDisplay = box.querySelector('.correct-answer-display')
     if (oldDisplay) oldDisplay.remove()
 
-    // [유형 A] 주관식 텍스트 입력창이 존재하는 경우
-    const subjectiveInput = box.querySelector('.q_subjective_input')
-    if (subjectiveInput) {
-      subjectiveInput.classList.remove('correct-text', 'wrong-text')
-      const userAnswer = subjectiveInput.value.trim()
-      const correctAnswer = expectedAnswers[0] || ''
+    // 💡 핵심 수정: 단순 순서 조회가 아니라, 박스 내부에서 ANSWER_KEY 딕셔너리에 매칭되는 진짜 name 코드를 가진 input을 찾아냅니다.
+    let qNum = null
+    let targetInput = null
+    const allInputs = box.querySelectorAll('input')
 
-      if (userAnswer === correctAnswer) {
-        correctCount++
-        box.classList.add('correct')
-        subjectiveInput.classList.add('correct-text')
-      } else {
+    for (let input of allInputs) {
+      // name 속성 우선, 없으면 id 속성으로 폴백 (주관식은 id만 존재)
+      const key = input.getAttribute('name') || input.getAttribute('id')
+      if (key && ANSWER_KEY.hasOwnProperty(key)) {
+        qNum = key
+        targetInput = input
+        break
+      }
+    }
+
+    // 일치하는 정답 정의가 아예 누락된 상자라면 채점 대상에서 안전하게 패스
+    if (!qNum || !targetInput) {
+      return
+    }
+
+    const expectedAnswers = ANSWER_KEY[qNum]
+
+    // 💡 유형 판별: 내부에 선택형 버튼(라디오/체크)이 존재하지 않는다면 주관식 텍스트 문제로 100% 완벽 판정합니다.
+    const isRadioOrCheckbox =
+      box.querySelector('input[type="radio"], input[type="checkbox"]') !== null
+    const isSubjective = !isRadioOrCheckbox
+
+    // [유형 A] 주관식 텍스트 문제 채점
+    if (isSubjective) {
+      targetInput.classList.remove('correct-text', 'wrong-text')
+
+      // 사용자가 쓴 정답 소문자화 + 양끝 공백 제거
+      const userAnswer = targetInput.value.trim().toLowerCase()
+
+      // 정답 배열 내부 데이터들도 전부 안전하게 텍스트 및 소문자 정제 처리
+      const cleanExpectedAnswers = expectedAnswers.map((ans) =>
+        ans.toString().trim().toLowerCase(),
+      )
+
+      // 입력칸이 비어있지 않고, 정답 후보군 리스트에 사용자가 쓴 정답이 들어있다면 합격!
+      const isCorrectSubjective =
+        userAnswer !== '' && cleanExpectedAnswers.includes(userAnswer)
+
+      if (!isCorrectSubjective) {
         wrongCount++
         box.classList.add('wrong')
-        subjectiveInput.classList.add('wrong-text')
+        targetInput.classList.add('wrong-text')
 
         const ansDiv = document.createElement('div')
         ansDiv.className = 'correct-answer-display'
-        ansDiv.textContent = `💡 정답: ${correctAnswer}`
+        ansDiv.textContent = `💡 정답: ${expectedAnswers[0] || '미지정'}`
         box.appendChild(ansDiv)
+      } else {
+        correctCount++
+        box.classList.add('correct')
+        targetInput.classList.add('correct-text')
       }
     }
-    // [유형 B] 객관식 (라디오 / 체크박스 / 아무것도 체크 안 함 공통)
+    // [유형 B] 객관식 문제 채점 (라디오 / 체크박스 공통)
     else {
       box.querySelectorAll('label').forEach((lbl) => {
         lbl.classList.remove('user-correct', 'user-wrong', 'actual-correct')
       })
 
-      // 💡 핵심 수정: input:checked를 사용하여 라디오와 체크박스를 둘 다 찾아냅니다.
       const checkedInputs = box.querySelectorAll('input:checked')
       const userAnswers = Array.from(checkedInputs).map((input) => input.value)
 
@@ -261,31 +334,17 @@ function scoreQuiz() {
         wrongCount++
         box.classList.add('wrong')
 
-        // 정답이 아무것도 체크 안 하는 것([])이었는데 유저가 무언가 체크한 경우
-        if (expectedAnswers.length === 0) {
-          checkedInputs.forEach((input) => {
-            const label = input.closest('label')
-            if (label) label.classList.add('user-wrong')
-          })
-          const ansDiv = document.createElement('div')
-          ansDiv.className = 'correct-answer-display'
-          ansDiv.textContent = `💡 정답: 선택지 없음 (아무것도 체크하지 않는 것이 정답입니다.)`
-          box.appendChild(ansDiv)
-        }
-        // 일반 객관식/라디오 정오답 피드백 처리
-        else {
-          box.querySelectorAll('label').forEach((label) => {
-            const input = label.querySelector('input')
-            if (!input) return
-            const val = input.value
+        box.querySelectorAll('label').forEach((label) => {
+          const input = label.querySelector('input')
+          if (!input) return
+          const val = input.value
 
-            if (expectedAnswers.includes(val)) {
-              label.classList.add('actual-correct')
-            } else if (input.checked) {
-              label.classList.add('user-wrong')
-            }
-          })
-        }
+          if (expectedAnswers.includes(val)) {
+            label.classList.add('actual-correct')
+          } else if (input.checked) {
+            label.classList.add('user-wrong')
+          }
+        })
       }
     }
   })
@@ -306,21 +365,16 @@ window.addEventListener('DOMContentLoaded', () => {
   ensureRequiredUIElements()
   updateProgress()
 
-  // 모든 종류의 선택 변경(체크박스/라디오) 시 상단 진행률 바 동기화
+  // 모든 종류의 선택 변경(체크박스/라디오/주관식) 시 상단 진행률 바 동기화
   document.addEventListener('change', (e) => {
-    if (
-      e.target &&
-      (e.target.type === 'checkbox' ||
-        e.target.type === 'radio' ||
-        e.target.classList.contains('q_subjective_input'))
-    ) {
+    if (e.target && e.target.tagName === 'INPUT') {
       updateProgress()
     }
   })
 
   // 주관식 키보드 입력 시 실시간 진행률 연동
   document.addEventListener('input', (e) => {
-    if (e.target && e.target.classList.contains('q_subjective_input')) {
+    if (e.target && e.target.tagName === 'INPUT') {
       updateProgress()
     }
   })
@@ -385,9 +439,9 @@ window.addEventListener('DOMContentLoaded', () => {
           actionContainer.id = 'review-bottom-actions'
           actionContainer.className = 'review-bottom-buttons'
           actionContainer.innerHTML = `
-          <button type="button" class="btn-review-exit" id="btn-bottom-exit">확인 완료</button>
-          <a href="wrong_notes.html" class="btn-review-wrong">오답노트로 가기</a>
-        `
+            <button type="button" class="btn-review-exit" id="btn-bottom-exit">확인 완료</button>
+            <a href="wrong_notes.html" class="btn-review-wrong">오답노트로 가기</a>
+          `
 
           originalSubmitBtn.parentNode.insertBefore(
             actionContainer,
