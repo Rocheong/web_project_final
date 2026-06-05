@@ -109,7 +109,7 @@ function ensureRequiredUIElements() {
   startModalOverlay.innerHTML = `
     <div class="custom-modal">
       <h2>퀴즈 시작 설정</h2>
-      <p>풀이 방식을 선택해 주세요. 제한시간을 입력하여 시험을 치르거나, 시간 제한이 없는 연습모드로 진행할 수 있습니다.</p>
+      <p>풀이 방식을 선택해 주세요.<br>제한시간을 입력하여 시험을 치르거나, <br>시간 제한이 없는 연습모드로 진행할 수 있습니다.</p>
       <div class="timer-input-wrapper">
         <input type="number" id="start-timer-input" value="15" min="1" max="180">
         <span>분</span>
