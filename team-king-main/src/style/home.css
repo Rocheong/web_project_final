@@ -166,10 +166,20 @@ body.main-page {
    ✅ 메인 페이지 header 투명
 ========================= */
 body.main-page header {
+  background: transparent;
   border-bottom: none;
   position: fixed;
   width: 100%;
   z-index: 1000;
+}
+
+/* ✅ 글자 색 */
+body.main-page .logo {
+  color: #111;
+}
+
+body.main-page .nav-links {
+  color: #111;
 }
 
 /* ✅ 카드 애니메이션 (필수) */
