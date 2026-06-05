@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/banner.css" />
+    <link rel="stylesheet" href="../style/card.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="../index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️</span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+        <ul class="nav-links">
+          <li class="active"><a href="./learn.html">학습</a></li>
+          <li><a href="./quiz/quizzes.html">퀴즈</a></li>
+        </ul>
+      </div>
+      <div class="header-right">
+        <a href="./team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <a href="https://www.joongbu.ac.kr/is/" target="_blank" class="banner">
+        <div class="banner-text">
+          <h3>정보보호를 위한 물리·관리·기술 능력을 탐구하는</h3>
+          <h1>중부대 <span>정보보호학전공</span></h1>
+        </div>
+        <img
+          src="../../../assets/jbu-emblem.png"
+          alt="중부대학교 로고"
+          class="banner-images"
+        />
+      </a>
+
+      <div class="tabs">
+        <span>학습</span>
+      </div>
+
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="🔍 관심 있는 영역을 검색해보세요."
+        />
+      </div>
+
+      <div class="main-content">
+        <aside class="sidebar">
+          <div class="filter-header">
+            <span>필터</span>
+            <a href="#" class="filter-reset">↻ 초기화</a>
+          </div>
+
+          <div class="filter-group">
+            <h4>종류</h4>
+            <label class="filter-item"
+              ><input type="checkbox" /> 기초 과정</label
+            >
+            <label class="filter-item">
+              <input type="checkbox" /> 대회 정보</label
+            >
+            <label class="filter-item"><input type="checkbox" /> 실습</label>
+            <label class="filter-item"
+              ><input type="checkbox" /> 언어 학습</label
+            >
+            <label class="filter-item"><input type="checkbox" /> 보안</label>
+            <label class="filter-item"
+              ><input type="checkbox" /> 코딩 테스트</label
+            >
+          </div>
+        </aside>
+
+        <section class="content-area">
+          <div class="content-header">
+            <h2>Unit <span id="unit-count">12</span></h2>
+            <select class="sort-select">
+              <option>추천순</option>
+            </select>
+          </div>
+
+          <div class="card-grid" id="card-container">
+            <a
+              href="https://academy.kisa.or.kr/edu/apply/applyEduDetail.do?APPLY=04&SQ=10150"
+              class="card"
+              target="_blank"
+            >
+              <div class="card-image bg-violet">
+                <h3>KISA</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">K-Shield 주니어</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">기초 과정</span>
+                  <span class="tag">리눅스</span>
+                  <span class="tag">윈도우</span>
+                  <span class="tag">네트워크</span>
+                  <span class="tag">보안 기본요소</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://dreamhack.io/" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>Dreamhack</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">Dreamhack</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">보안</span>
+                  <span class="tag tag-tier">실습</span>
+                  <span class="tag">시스템 해킹</span>
+                  <span class="tag">웹 해킹</span>
+                  <span class="tag">리버싱</span>
+                  <span class="tag">포렌식</span>
+                  <span class="tag">암호학</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&page=1"
+              class="card"
+              target="_blank"
+            >
+              <div class="card-image bg-violet">
+                <h3>Programmers</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">Programmers</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">코딩 테스트</span>
+                  <span class="tag">C</span>
+                  <span class="tag">Java</span>
+                  <span class="tag">JS</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Kotlin</span>
+                  <span class="tag">Swift</span>
+                  <span class="tag">MySQL</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://www.w3schools.com/default.asp"
+              class="card"
+              target="_blank"
+            >
+              <div class="card-image bg-violet">
+                <h3>W3school</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">W3school</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">언어 학습</span>
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JS</span>
+                  <span class="tag">C</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">SQL</span>
+                  <span class="tag">React</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://wikidocs.net/book/1" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>위키독스</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">점프 투 파이썬</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">언어 학습</span>
+                  <span class="tag">Python</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://modoocode.com/231" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>모두의 코드</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">씹어먹는 C언어 시작하기</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">언어 학습</span>
+                  <span class="tag">C</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://overthewire.org/wargames/bandit/"
+              class="card"
+              target="_blank"
+            >
+              <div class="card-image bg-violet">
+                <h3>OverTheWire</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">Bandit</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">실습</span>
+                  <span class="tag">Linux</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://ctf.redraccoon.kr/" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>라쿤시티</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">라쿤시티</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">보안</span>
+                  <span class="tag tag-tier">실습</span>
+                  <span class="tag">Linux</span>
+                  <span class="tag">RedTeam</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.lazenca.net/" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>TechNote</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">TechNote</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">보안</span>
+                  <span class="tag">시스템 해킹</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://portswigger.net/" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>PortSwigger</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">PortSwigger</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">보안</span>
+                  <span class="tag tag-tier">실습</span>
+                  <span class="tag">웹 해킹</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://app.hextree.io/map" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>Hextree</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">The Hexmap</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">보안</span>
+                  <span class="tag">웹 해킹</span>
+                  <span class="tag">리버싱</span>
+                  <span class="tag">하드웨어 해킹</span>
+                  <span class="tag">안드로이드</span>
+                </div>
+              </div>
+            </a>
+            <a href="http://k-ctf.org/" class="card" target="_blank">
+              <div class="card-image bg-violet">
+                <h3>K-CTF</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">K-CTF</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">대회 정보</span>
+                  <span class="tag">CTF</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      해당 페이지는 드림핵 홈페이지를 복사하였습니다.<br />© 김정현진과
+      유청림성준. All rights reserved.
+    </footer>
+  </body>
+</html>

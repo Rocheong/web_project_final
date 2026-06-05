@@ -1,0 +1,165 @@
+/* ===========================
+   팀 페이지 전용 컨테이너
+=========================== */
+.team-page .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ===========================
+   캐러셀
+=========================== */
+.scene {
+  width: 420px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.carousel {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 30s linear infinite;
+}
+
+/* ✅ hover: 회전 느려짐 */
+.carousel:hover {
+  animation-duration: 30s;
+}
+
+/* 카드 배치 */
+.profile {
+  position: absolute;
+  width: 280px;
+  top: 50%;
+  left: 50%;
+  transition: opacity 0.3s ease;
+}
+
+.profile:nth-child(1) {
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(380px);
+}
+.profile:nth-child(2) {
+  transform: translate(-50%, -50%) rotateY(90deg) translateZ(380px);
+}
+.profile:nth-child(3) {
+  transform: translate(-50%, -50%) rotateY(180deg) translateZ(380px);
+}
+.profile:nth-child(4) {
+  transform: translate(-50%, -50%) rotateY(270deg) translateZ(380px);
+}
+
+/* ✅ hover: 다른 카드 흐리게 */
+.carousel:hover .profile {
+  opacity: 0.25;
+}
+
+.carousel:hover .profile:hover {
+  opacity: 1;
+}
+
+/* 카드 UI */
+.profile-inner {
+  background: #fffaf7;
+  padding: 26px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.profile-inner a {
+  word-break: break-word;
+  color: #444;
+  text-decoration: none;
+}
+
+.profile-inner a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ hover 확대 */
+.profile:hover .profile-inner {
+  transform: scale(1.08);
+  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.32);
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.info {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  max-height: 0;
+  opacity: 0;
+  font-size: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.profile:hover .info {
+  max-height: 200px;
+  opacity: 1;
+}
+/* ===========================
+   메인
+=========================== */
+.main {
+  width: 100%;
+  background: linear-gradient(180deg, #fffaf7, #fff3ea);
+  padding: 24px 36px;
+  border-radius: 20px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+}
+
+.main h3 {
+  font-size: 24px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+/* ===========================
+   프로젝트 상세 소개
+=========================== */
+.project-detail p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.project-list {
+  margin-top: 14px;
+  padding-left: 18px;
+}
+
+.project-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.project-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #666;
+}

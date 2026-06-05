@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/banner.css" />
+    <link rel="stylesheet" href="../../style/card.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="../../index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️ </span
+          ><span style="font-style: italic">STUDEO</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../learn.html">학습</a></li>
+          <li class="active"><a href="./quizzes.html">퀴즈</a></li>
+        </ul>
+      </div>
+      <div class="header-right">
+        <a href="../team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <a href="https://www.joongbu.ac.kr/is/" target="_blank" class="banner">
+        <div class="banner-text">
+          <h3>정보보호를 위한 물리·관리·기술 능력을 탐구하는</h3>
+          <h1>중부대 <span>정보보호학전공</span></h1>
+        </div>
+        <img
+          src="../../../assets/jbu-emblem.png"
+          alt="중부대학교 로고"
+          class="banner-images"
+        />
+      </a>
+
+      <div class="tabs">
+        <span>퀴즈</span>
+      </div>
+
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="🔍 관심 있는 강의를 검색해보세요."
+        />
+      </div>
+
+      <div class="main-content">
+        <aside class="sidebar">
+          <div class="filter-header">
+            <span>필터</span>
+            <a href="#" class="filter-reset">↻ 초기화</a>
+          </div>
+
+          <div class="filter-group">
+            <h4>종류</h4>
+            <label class="filter-item"
+              ><input type="checkbox" /> 전공 필수</label
+            >
+            <label class="filter-item"
+              ><input type="checkbox" /> 전공 선택</label
+            >
+          </div>
+
+          <div class="filter-group">
+            <h4>Tier</h4>
+            <label class="filter-item"><input type="checkbox" /> 1학년</label>
+            <label class="filter-item"><input type="checkbox" /> 2학년</label>
+            <label class="filter-item"><input type="checkbox" /> 3학년</label>
+            <label class="filter-item"><input type="checkbox" /> 4학년</label>
+          </div>
+        </aside>
+
+        <section class="content-area">
+          <div class="content-header">
+            <h2>Unit <span id="unit-count">5</span></h2>
+            <select class="sort-select">
+              <option>이름순</option>
+            </select>
+          </div>
+
+          <div class="card-grid" id="card-container">
+            <a href="./object-oriented.html" class="card">
+              <div class="card-image bg-pink">
+                <div class="bookmark-icon bookmark-pink"></div>
+                <h3>객체지향 프로그래밍</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">객체지향 프로그래밍</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">2학년</span>
+                  <span class="tag tag-choice">전공 선택</span>
+                  <span class="tag">JAVA</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="./network.html" class="card">
+              <div class="card-image bg-green">
+                <div class="bookmark-icon bookmark-green"></div>
+                <h3>네트워크 보안</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">네트워크 보안</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">2학년</span>
+                  <span class="tag tag-essential">전공 필수</span>
+                  <span class="tag">프로토콜</span>
+                  <span class="tag">인터페이스</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="./server.html" class="card">
+              <div class="card-image bg-blue">
+                <div class="bookmark-icon bookmark-blue"></div>
+                <h3>서버구축 및 운영실습</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">서버구축 및 운영실습</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">2학년</span>
+                  <span class="tag tag-essential">전공 필수</span>
+                  <span class="tag">리눅스</span>
+                  <span class="tag">서버</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="./web.html" class="card">
+              <div class="card-image bg-orange">
+                <div class="bookmark-icon bookmark-orange"></div>
+                <h3>웹 프로그래밍</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">웹 프로그래밍</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">2학년</span>
+                  <span class="tag tag-choice">전공 선택</span>
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JS</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="./secure-data.html" class="card">
+              <div class="card-image bg-violet">
+                <div class="bookmark-icon bookmark-violet"></div>
+                <h3>보안 자료 구조</h3>
+              </div>
+              <div class="card-info">
+                <div class="card-title">보안 자료 구조</div>
+                <div class="card-tags">
+                  <span class="tag tag-tier">2학년</span>
+                  <span class="tag tag-essential">전공 필수</span>
+                  <span class="tag">C언어</span>
+                  <span class="tag">공학 수학</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      해당 페이지는 드림핵 홈페이지를 복사하였습니다.<br />© 김정현진과
+      유청림성준. All rights reserved.
+    </footer>
+  </body>
+</html>

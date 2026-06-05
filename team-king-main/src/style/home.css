@@ -1,0 +1,328 @@
+/* =================================
+   HUD ROOT (중앙 정렬의 핵심)
+================================= */
+.hud-root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* =====================
+   STATE SYSTEM
+===================== */
+input[type='radio'] {
+  display: none;
+}
+
+:root {
+  --core-color: #7476d4; /* 브랜드 메인 */
+  --glow-color: rgba(116, 118, 212, 0.6);
+
+  --ring-speed: 6s;
+  --core-scale: 1;
+  --core-opacity: 1;
+  --bg-tint: none;
+  --orbit-radius: clamp(120px, 22vw, 245px);
+
+  --ball-hover-bg: #0b0f1a;
+  --ball-hover-glow: rgba(116, 118, 212, 0.45);
+}
+
+/* =====================
+   ORBIT WRAPPER
+===================== */
+.orbit-wrapper {
+  position: relative;
+  width: clamp(260px, 70vw, 520px);
+  height: clamp(260px, 70vw, 520px);
+}
+
+/* =====================
+   ABSOUL CORE
+===================== */
+#menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #7476d4, #614e9c);
+  color: white;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--core-scale));
+  opacity: var(--core-opacity);
+  z-index: 10;
+
+  box-shadow:
+    0 0 24px var(--glow-color),
+    0 0 90px var(--glow-color);
+}
+/* =====================
+   CORE IDLE PULSE (모드 상관없이)
+===================== */
+.orbit-wrapper .menu-btn:not(:hover) {
+  animation: core-idle-pulse 4s infinite ease-in-out;
+}
+
+@keyframes core-idle-pulse {
+  0% {
+    box-shadow:
+      0 0 22px var(--glow-color),
+      0 0 45px var(--glow-color);
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  50% {
+    box-shadow:
+      0 0 48px var(--glow-color),
+      0 0 110px var(--glow-color);
+    transform: translate(-50%, -50%) scale(1.05); /* ✅ 확실히 보임 */
+  }
+  100% {
+    box-shadow:
+      0 0 22px var(--glow-color),
+      0 0 45px var(--glow-color);
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+}
+
+/* 코어 링 */
+.menu-btn::before,
+.menu-btn::after {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  border: 1px solid var(--glow-color);
+  animation: core-spin var(--ring-speed) linear infinite;
+}
+
+.menu-btn::after {
+  inset: -60px;
+  border-style: dashed;
+  opacity: 0.4;
+  animation-direction: reverse;
+}
+
+@keyframes core-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================
+   STAGE
+===================== */
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* =====================
+   ORBIT
+===================== */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+
+  transform-origin: center;
+  --angle: calc(360deg / var(--count) * var(--i));
+  transform: rotate(0deg);
+}
+
+/* OPEN */
+#menu-toggle:checked ~ .stage .orbit {
+  animation: orbit-out 1.2s ease-out forwards;
+  animation-delay: calc(var(--i) * 0.12s);
+}
+
+/* CLOSE */
+#menu-toggle:not(:checked) ~ .stage .orbit {
+  animation: orbit-in 1s ease-in forwards;
+  animation-delay: calc((var(--count) - var(--i) - 1) * 0.12s);
+}
+
+/* =====================
+   BALL ✅ 핵심 변경
+===================== */
+.ball {
+  width: clamp(50px, 8vw, 100px);
+  height: clamp(50px, 8vw, 100px);
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  color: #0b0f1a;
+
+  /* ✅ 닫힌 상태 = 코어 내부 완전 수납 */
+  transform: translateX(0) scale(0.4) translateZ(0);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.ball:hover {
+  transform: translateX(var(--orbit-radius)) scale(1.06);
+  box-shadow: 0 22px 42px var(--ball-hover-glow);
+  animation: ball-hover-pulse 1.2s ease-in-out infinite;
+}
+@keyframes ball-hover-pulse {
+  0% {
+    box-shadow: 0 22px 42px var(--ball-hover-glow);
+  }
+  50% {
+    box-shadow: 0 30px 60px var(--ball-hover-glow);
+  }
+  100% {
+    box-shadow: 0 22px 42px var(--ball-hover-glow);
+  }
+}
+
+.ball span {
+  font-size: clamp(10px, 2vw, 16px);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  transform: rotate(calc(-1 * var(--angle)));
+}
+/* =========================
+   DISABLED BALL (완전 비활성)
+========================= */
+.ball.disabled {
+  pointer-events: none !important;
+}
+
+.ball.disabled span {
+  color: #aaa;
+}
+
+/* OPEN BALL */
+#menu-toggle:checked ~ .stage .orbit .ball {
+  animation: radius-out 1.2s ease-out forwards;
+  animation-delay: calc(var(--i) * 0.12s);
+  pointer-events: auto;
+}
+
+/* CLOSE BALL */
+#menu-toggle:not(:checked) ~ .stage .orbit .ball {
+  animation: radius-in 1s ease-in forwards;
+  animation-delay: calc((var(--count) - var(--i) - 1) * 0.12s);
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes orbit-out {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(var(--angle));
+  }
+}
+
+@keyframes orbit-in {
+  from {
+    transform: rotate(var(--angle));
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes radius-out {
+  to {
+    transform: translateX(var(--orbit-radius)) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes radius-in {
+  from {
+    transform: translateX(var(--orbit-radius)) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0) scale(0.4);
+    opacity: 0;
+  }
+}
+/* =====================
+   AI TEXT
+===================== */
+.ai-text {
+  position: absolute;
+  top: calc(50% + 100px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 320px;
+  height: 3em; /* 🔥 충분히 크게 */
+  overflow: hidden; /* 🔥 잘림 방지 */
+
+  display: flex; /* 🔥 중앙 정렬 핵심 */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.04em;
+  color: rgba(37, 99, 235, 0.85);
+}
+
+/* span도 동일 정렬 */
+.ai-text span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  display: flex; /* 🔥 추가 */
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-wrapper:has(.ball:hover) .ai-text span {
+  opacity: 0 !important;
+}
+
+.orbit-wrapper:has(.ball:hover) .ai-text::after {
+  content: attr(data-label) ' command detected.';
+
+  position: absolute;
+  inset: 0; /* 🔥 이게 핵심 */
+
+  display: flex; /* 🔥 중앙 정렬 */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+
+  color: rgb(0, 213, 131);
+}

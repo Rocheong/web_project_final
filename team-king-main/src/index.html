@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDEO</title>
+
+    <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <!-- HUD 전용 스타일 -->
+    <link rel="stylesheet" href="./style/home.css" />
+  </head>
+
+  <body class="index-page">
+    <div class="hud-root">
+      <!-- ===== ABSOUL + ORBIT ===== -->
+      <div class="orbit-wrapper">
+        <input type="checkbox" id="menu-toggle" checked />
+
+        <!-- CORE -->
+        <label for="menu-toggle" class="menu-btn">
+          <span class="core-glow"></span>
+          <span class="core-label" style="font-size: 20px; font-style: italic"
+            >STUDEO</span
+          >
+        </label>
+
+        <!-- STAGE -->
+        <div class="stage" style="--count: 8">
+          <div class="orbit" style="--i: 6">
+            <a class="ball" href="./pages/learn.html"><span>학습</span></a>
+          </div>
+          <div class="orbit" style="--i: 7">
+            <a class="ball" href="./pages/quiz/quizzes.html">
+              <span>퀴즈</span>
+            </a>
+          </div>
+
+          <div class="orbit" style="--i: 0">
+            <a class="ball" href="./pages/quiz/object-oriented.html"
+              ><span>객체</span></a
+            >
+          </div>
+          <div class="orbit" style="--i: 1">
+            <a class="ball" href="./pages/quiz/secure-data.html"
+              ><span>보자구</span></a
+            >
+          </div>
+          <div class="orbit" style="--i: 2">
+            <a class="ball" href="./pages/quiz/server.html"
+              ><span>서버구축</span></a
+            >
+          </div>
+          <div class="orbit" style="--i: 3">
+            <a class="ball" href="./pages/quiz/web.html"><span>웹프</span></a>
+          </div>
+          <div class="orbit" style="--i: 4">
+            <a class="ball" href="./pages/quiz/network.html"
+              ><span>네트워크</span></a
+            >
+          </div>
+          <div class="orbit" style="--i: 5">
+            <a class="ball" href="./pages/team.html"><span>팀소개</span></a>
+          </div>
+          <!-- 비활성 시 class에 disabled 추가-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

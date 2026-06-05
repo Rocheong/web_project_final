@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/team-king-main/src/index.html" },
+    { "source": "/assets/(.*)", "destination": "/team-king-main/assets/$1" },
+    { "source": "/src/(.*)", "destination": "/team-king-main/src/$1" },
+    { "source": "/(.*)", "destination": "/team-king-main/src/$1" }
+  ]
+}

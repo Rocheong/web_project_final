@@ -1,0 +1,157 @@
+/* 그리드 카드 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+
+}
+/* 카드를 링크 태그(a)로 변경했으므로 block 요소로 동작하게 수정 */
+.card {
+  display: block;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgb(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+.card-image {
+  height: 160px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  position: relative;
+}
+.card-image h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+.bookmark-icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 20px;
+  height: 30px;
+}
+
+.bg-pink {
+  background-color: #fff0f5;
+}
+.bg-blue {
+  background-color: #f0fbff;
+}
+.bg-green {
+  background-color: #f0fff2;
+}
+.bg-orange {
+  background-color: #fff8f0;
+}
+.bg-violet {
+  background-color: #f5f0ff;
+}
+.bookmark-pink {
+  background-color: #ff4785;
+}
+.bookmark-blue {
+  background-color: #73c8e6;
+}
+.bookmark-green {
+  background-color: #8dec7a;
+}
+.bookmark-orange {
+  background-color: #ffb347;
+}
+.bookmark-violet {
+  background-color: #b19cd9;
+}
+
+.card-info {
+  padding: 15px 15px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tag {
+  padding: 3px 8px;
+  background-color: #f5f5f5;
+  color: #666;
+  font-size: 11px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+.tag-tier {
+  color: #e83e8c;
+  font-weight: bold;
+}
+.tag-choice {
+  color: #fd7e14;
+  font-weight: bold;
+}
+.tag-essential {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* 팀원 그리드 스타일 */
+.coworker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: start;
+}
+
+.coworker {
+  padding: 30px 80px;
+  border: #eee 1px solid;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.coworker:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border: #eee 1px solid;
+}
+
+.coworker-photo {
+  width: 100px;
+  height: 100px;
+  /* border-radius: 50%; */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.coworker-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coworker-links li {
+  margin: 5px 0;
+}
+
+.coworker-links a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.2s;
+}
+
+.coworker-links a:hover {
+  color: #0056b3;
+}
