@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-
 }
 /* 카드를 링크 태그(a)로 변경했으므로 block 요소로 동작하게 수정 */
 .card {

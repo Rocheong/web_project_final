@@ -1,0 +1,408 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 사이드 바 블록 */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem 3rem;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* 사이드 바 너비 고정*/
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* 사이드 바 메뉴 목록 */
+.nav-menu-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 1.5rem;
+}
+
+/* 사이드 바 메뉴 항목 */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #495057;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* 사이드 바 메뉴 hover */
+.nav-item:hover { background: #F1F3F5; }
+
+/* 사이드 바 선택된 메뉴 */
+.nav-item.active {
+  background: #EEEDFE;
+  color: #614e9c;
+  font-weight: 600;
+}
+
+/* 우측 메인 콘텐츠 영역 */
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 취소 버튼 */
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #CED4DA;
+  background: #ffffff;
+  color: #495057;
+}
+
+/* 글 작성, 등록 버튼 */
+.btn-primary {
+  background: #614e9c;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* 필터 칩 + 글쓰기 버튼 가로 배치 */
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+/* filter-header 안에서는 filter-bar 하단 여백 제거 */
+.filter-header .filter-bar {
+  margin-bottom: 0;
+}
+
+/* 필터 칩 목록 */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* 필터 칩 버튼 */
+.chip {
+  padding: 6px 16px;
+  font-size: 13px;
+  border: 1px solid #E9ECEF;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #495057;
+  cursor: pointer;
+}
+
+/* 선택된 필터 칩 */
+.chip.on {
+  background: #614e9c;
+  color: #ffffff;
+  border-color: #614e9c;
+  font-weight: 600;
+}
+
+/* 게시글 목록 표 */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: -12px;
+}
+
+/* 게시글 한 줄 */
+tr {
+  background: #fbf9fb;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* 게시글 있는 줄 모션 */
+tr.has-item {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 게시글 있는 줄 hover */
+tr.has-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(97, 78, 156, 0.08);
+}
+
+/* 게시글 칸 */
+td {
+  padding: 20px;
+  vertical-align: middle;
+}
+
+/* 번호 칸 (맨 왼쪽) */
+td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding-right: 0;
+  color: #AFA9EC;
+  font-size: 12px;
+}
+
+/* 내용 칸 (맨 오른쪽) */
+td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* 게시글 제목 */
+.post-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2D2D2D;
+  margin-bottom: 6px;
+}
+
+/* 날짜, 작성자, 조회수 */
+.col-d {
+  font-size: 13px;
+  color: #868E96;
+}
+
+/* 배지 공통 */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* 배지 종류별 색상 */
+.b-pinned   { background: #FFF0F6; color: #D9480F; }
+.b-notice   { background: #E8F5E9; color: #2E7D32; }
+.b-new      { background: #E8EAF6; color: #3F51B5; }
+.b-answered { background: #E0F2F1; color: #004D40; }
+.b-waiting  { background: #FFF3E0; color: #E65100; }
+.b-closed   { background: #ECEFF1; color: #37474F; }
+
+/* 페이지네이션 */
+.pager {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+/* 페이지 버튼 */
+.pb {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #E9ECEF;
+  color: #495057;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* 현재 페이지 버튼 */
+.pb.cur {
+  background: #614e9c;
+  color: #ffffff;
+  border-color: #614e9c;
+  font-weight: 600;
+}
+
+/* 비활성 페이지 버튼 */
+.pb.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* 모달 배경 오버레이 */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 모달 열릴 때 */
+.modal-overlay.open { display: flex; }
+
+/* 모달 박스 */
+.modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 75%;     
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* 모달 제목 */
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 1.5rem;
+}
+
+/* 모달 입력 행 */
+.form-row { margin-bottom: 1.25rem; }
+
+/* 모달 입력 라벨 */
+.form-row label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 6px;
+}
+
+/* 모달 입력창 */
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  resize: none;
+}
+
+/* 모달 입력창 포커스 */
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #614e9c;
+}
+
+/* 모달 버튼 묶음 */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+/* 상세 페이지 뒤로가기 */
+.detail-back {
+  color: #614e9c;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+/* 상세 페이지 헤더 */
+.detail-header {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid #EAEAEA;
+  border-bottom: none;
+}
+
+/* 상세 페이지 제목 */
+.detail-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  margin: 10px 0;
+}
+
+/* 상세 페이지 작성자, 날짜, 조회수 */
+.detail-meta {
+  font-size: 13px;
+  color: #868E96;
+  display: flex;
+  gap: 16px;
+}
+
+/* 상세 페이지 본문 */
+.detail-body {
+  background: white;
+  padding: 2rem;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid #EAEAEA;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+/* 댓글 개수 제목 */
+.comment-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 1rem;
+}
+
+/* 댓글 한 개 블록 */
+.comment-item {
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #EAEAEA;
+  margin-bottom: 10px;
+}
+
+/* 댓글 작성자 */
+.comment-author {
+  font-size: 13px;
+  font-weight: 700;
+  color: #614e9c;
+  margin-bottom: 4px;
+}
+
+/* 댓글 내용 */
+.comment-text {
+  font-size: 14px;
+  color: #495057;
+}
+
+/* 댓글 입력 영역 */
+.comment-input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+/* 댓글 입력창 */
+.comment-input-row input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* 댓글 입력창 포커스 */
+.comment-input-row input:focus {
+  border-color: #614e9c;
+}

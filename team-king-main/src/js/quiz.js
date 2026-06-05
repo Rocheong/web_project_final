@@ -135,7 +135,7 @@ function ensureRequiredUIElements() {
       <div class="custom-modal-buttons">
         <button type="button" class="btn-close" id="btn-modal-close">나가기</button>
         <button type="button" class="btn-view-answers" id="btn-modal-view-answers">정답보기</button>
-        <a href="wrong_notes.html" class="btn-wrong-notes">오답노트</a>
+        <a href="../../pages/mistake.html" class="btn-wrong-notes">오답노트</a>
       </div>
     </div>
   `
@@ -440,7 +440,7 @@ window.addEventListener('DOMContentLoaded', () => {
           actionContainer.className = 'review-bottom-buttons'
           actionContainer.innerHTML = `
             <button type="button" class="btn-review-exit" id="btn-bottom-exit">확인 완료</button>
-            <a href="wrong_notes.html" class="btn-review-wrong">오답노트로 가기</a>
+            <a href="../../pages/mistake.html" class="btn-review-wrong">오답노트로 가기</a>
           `
 
           originalSubmitBtn.parentNode.insertBefore(
