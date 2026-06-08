@@ -200,3 +200,80 @@
   border: none;
   cursor: pointer;
 }
+
+/* ===================================================
+   ✅ 마이페이지 모바일 대응 반응형 스타일 (768px 이하)
+   =================================================== */
+@media (max-width: 768px) {
+  .mypage-container {
+    /* 기존 70px 마진은 모바일에서 너무 크므로 여백을 대폭 줄여 공간을 확보합니다. */
+    margin: 30px 15px;
+  }
+
+  .mypage-container h1 {
+    font-size: 24px; /* 모바일 화면에 맞춰 타이틀 크기 축소 */
+    text-align: center; /* 중앙 정렬로 안정감 부여 */
+  }
+
+  #welcome {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+
+  .mypage-section-top {
+    /* flex-wrap이 있지만 모바일에서는 확실하게 세로(column)로 떨어지도록 강제합니다. */
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px auto;
+  }
+
+  .note-section,
+  .todo-section,
+  .review-notes {
+    /* 고정된 최소 가로폭(320px)을 해제하여 스마트폰 너비에 유연하게 늘어나고 줄어들게 만듭니다. */
+    flex: 1 1 100%;
+    min-width: 0;
+    padding: 16px; /* 내부 여백을 살짝 줄여 답답함을 해소합니다. */
+  }
+
+  /* 나의 메모 섹션 수정 */
+  #note-input {
+    min-height: 120px; /* 모바일 입력창 높이 최적화 */
+    padding: 10px;
+  }
+
+  #save-note {
+    width: 100%; /* 모바일에서는 버튼을 가득 채워 터치하기 쉽게 만듭니다. */
+    padding: 12px;
+  }
+
+  /* 할 일 목록 섹션 수정 */
+  .todo-input-row {
+    gap: 8px;
+  }
+
+  #todo-input {
+    padding: 10px 12px;
+  }
+
+  /* 오답 노트 가로 스크롤 카드 레이아웃 최적화 */
+  .review-notes-list {
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+
+  .review-note-card {
+    /* 작은 모바일 화면(예: 320px~360px 가로폭 기기)에서도 카드가 잘리지 않고 꽉 차게 조절 */
+    flex: 0 0 260px;
+    min-width: 260px;
+    padding: 14px;
+  }
+
+  /* 하단 링크 영역 정렬 */
+  .bottom-link {
+    margin-top: 50px; /* 과도한 상단 마진 줄임 */
+    justify-content: center; /* 모바일 화면 중앙으로 배치 */
+    gap: 30px;
+  }
+}

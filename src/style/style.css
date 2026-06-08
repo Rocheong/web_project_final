@@ -42,6 +42,9 @@ header {
   height: 70px;
   background-color: #0b0f1a;
   padding: 0 20px;
+  transition:
+    background-color 0.3s ease,
+    border-bottom 0.3s ease;
 }
 
 header:not(.main-header) {
@@ -86,6 +89,13 @@ header:not(.main-header) {
   width: 100%;
   height: 3px;
   background-color: #7476d4;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  width: 20px;
+  display: none;
+  margin-left: auto;
 }
 
 .mypage-link {
@@ -357,32 +367,277 @@ footer {
     width: 100%;
   }
 
-  header {
+  /* 1. 토글 버튼 노출 및 위치 고정 */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 20px; /* 헤더 패딩에 맞춰 조절하세요 */
+  }
+
+  /* 2. 헤더 구조를 세로 배열로 변경 */
+  header.header {
     flex-direction: column;
     align-items: flex-start;
     height: auto;
-    gap: 10px;
-    padding: 10px 15px;
+    padding: 15px;
+    position: relative;
   }
 
   .header-left {
     width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .nav-links {
+  /* 로고 영역은 상단 고정 */
+  .header-left .logo {
+    margin-bottom: 10px;
+  }
+
+  /* 3. 기본 상태에서 메뉴 숨기기 */
+  .nav-links,
+  .header-right {
+    display: none;
     width: 100%;
-    justify-content: space-around;
-    font-size: 14px;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+
+  /* 4. 자바스크립트로 active 클래스가 붙었을 때만 노출 */
+  .nav-links.active,
+  .header-right.active {
+    display: flex;
+  }
+
+  /* 5. 모바일 메뉴 내부 스타일 정렬 */
+  .nav-links li,
+  .header-right > div,
+  .header-right > a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05); /* 디자인에 따라 색상 조절 가능 */
   }
 
   .header-right {
-    width: 100%;
-    justify-content: flex-end;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .team-link {
-    border: none;
-    padding-left: 0;
+    border: none !important;
+    padding: 12px 0 !important;
+  }
+}
+
+/* ===================================================
+   ✅ [인덱스 배경전환 적용] 모바일 대응 반응형 스타일 (768px 이하)
+   =================================================== */
+@media (max-width: 768px) {
+  /* [공통] 메인 레이아웃 세로 정렬 */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sidebar,
+  .content-area {
+    width: 100%;
+  }
+
+  .login-container {
+    width: 300px;
+  }
+
+  /* -----------------------------------------------
+     1. index 외의 일반 페이지 (서브 페이지) 모바일 헤더
+     ----------------------------------------------- */
+  body:not(.main-page) header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    height: auto !important;
+    padding: 12px 20px !important;
+    position: relative !important;
+    background-color: #0b0f1a !important; /* 서브페이지는 기존 어두운 배경 유지 */
+  }
+
+  body:not(.main-page) .header-left,
+  body:not(.main-page) .header-right {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+    display: none;
+  }
+
+  body:not(.main-page) .header-left {
+    display: flex !important;
+  }
+  body:not(.main-page) .header-left .logo {
+    align-self: flex-start !important;
+    margin-bottom: 8px;
+  }
+
+  body:not(.main-page) .menu-toggle {
+    display: block !important;
+    position: absolute !important;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    filter: none !important; /* 원본 색상 유지 */
+  }
+
+  body:not(.main-page) .nav-links {
+    display: none !important;
+    width: 100% !important;
+  }
+
+  body:not(.main-page) .nav-links.active,
+  body:not(.main-page) .header-right.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  body:not(.main-page) .nav-links li,
+  body:not(.main-page) .header-right > div,
+  body:not(.main-page) .header-right > a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 10px 0 !important;
+    font-size: 15px !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-sizing: border-box !important;
+    line-height: 1.4 !important;
+  }
+
+  .member-only[style*='display: none'] {
+    display: none !important;
+  }
+
+  body:not(.main-page) .nav-links li.active::after {
+    bottom: 3px !important;
+    width: 55px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  body:not(.main-page) .nav-links li.active {
+    color: #7476d4 !important;
+    font-weight: bold;
+  }
+
+  /* -----------------------------------------------
+     2. index 페이지 (body.main-page) 전용 모바일 헤더
+     ----------------------------------------------- */
+  /* 기본 상태: 배경 투명화 */
+  body.main-page header.header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 12px 15px;
+    position: fixed;
+    width: 100%;
+    background-color: transparent !important;
+    border-bottom: none !important;
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+    z-index: 9999;
+  }
+
+  /* 토글이 켜졌거나 스크롤이 내려갔을 때: 배경 흰색 */
+  body.main-page header.header.scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  body.main-page .header-left {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body.main-page .header-left .logo {
+    margin-bottom: 8px;
+  }
+
+  /* 🎯 [수정] 인덱스 토글 아이콘 초기 상태: filter를 제거하여 원본 검은색 이미지 노출 */
+  body.main-page .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    cursor: pointer;
+    filter: none !important; /* 원래 업로드하신 검은색 list.png 그대로 출력 */
+    transition: filter 0.3s ease;
+  }
+
+  /* 🎯 [수정] 스크롤이 내려가거나 토글이 열려 배경이 하얗게 변했을 때만 #0b0f1a 색상 필터 적용 */
+  body.main-page header.header.scrolled .menu-toggle {
+    filter: brightness(0) invert(6%) sepia(21%) saturate(2371%)
+      hue-rotate(196deg) brightness(97%) contrast(97%) !important;
+  }
+
+  /* -----------------------------------------------
+     3. 기타 모바일 공통 세부 컴포넌트 조정
+     ----------------------------------------------- */
+  /* 로그인 버튼 규격 최적화 */
+  .login {
+    width: 90% !important;
+    max-width: 280px;
+    margin: 8px auto !important;
+    padding: 8px !important;
+    background-color: #7476d4 !important;
+    border-radius: 8px;
+    display: block !important;
+  }
+
+  .header-right .login[style*='display: none'] {
+    display: none !important;
+  }
+
+  /* 인덱스 페이지 모바일 로그인 텍스트 색상 대응 */
+  body.main-page .login a {
+    color: #ffffff !important;
+  }
+  body:not(.main-page) .login a {
+    color: #0b0f1a !important;
+  }
+
+  /* 마이페이지 프로필 박스 두께 슬림화 */
+  .mypage-link {
+    display: block !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 6px 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+  }
+
+  body.main-page .mypage-link {
+    border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .mypage-link img {
+    width: 36px !important;
+    height: 36px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .team-link {
+    border-left: none !important;
+    padding-left: 0 !important;
+    line-height: 1.4 !important;
   }
 }

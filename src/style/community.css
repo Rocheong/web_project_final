@@ -42,11 +42,13 @@
 }
 
 /* 사이드 바 메뉴 hover */
-.nav-item:hover { background: #F1F3F5; }
+.nav-item:hover {
+  background: #f1f3f5;
+}
 
 /* 사이드 바 선택된 메뉴 */
 .nav-item.active {
-  background: #EEEDFE;
+  background: #eeedfe;
   color: #614e9c;
   font-weight: 600;
 }
@@ -64,7 +66,7 @@
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  border: 1px solid #CED4DA;
+  border: 1px solid #ced4da;
   background: #ffffff;
   color: #495057;
 }
@@ -105,7 +107,7 @@
 .chip {
   padding: 6px 16px;
   font-size: 13px;
-  border: 1px solid #E9ECEF;
+  border: 1px solid #e9ecef;
   border-radius: 20px;
   background: #ffffff;
   color: #495057;
@@ -138,7 +140,9 @@ tr {
 
 /* 게시글 있는 줄 모션 */
 tr.has-item {
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 /* 게시글 있는 줄 hover */
@@ -158,7 +162,7 @@ td:first-child {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   padding-right: 0;
-  color: #AFA9EC;
+  color: #afa9ec;
   font-size: 12px;
 }
 
@@ -172,14 +176,14 @@ td:last-child {
 .post-title {
   font-size: 16px;
   font-weight: 600;
-  color: #2D2D2D;
+  color: #2d2d2d;
   margin-bottom: 6px;
 }
 
 /* 날짜, 작성자, 조회수 */
 .col-d {
   font-size: 13px;
-  color: #868E96;
+  color: #868e96;
 }
 
 /* 배지 공통 */
@@ -193,12 +197,30 @@ td:last-child {
 }
 
 /* 배지 종류별 색상 */
-.b-pinned   { background: #FFF0F6; color: #D9480F; }
-.b-notice   { background: #E8F5E9; color: #2E7D32; }
-.b-new      { background: #E8EAF6; color: #3F51B5; }
-.b-answered { background: #E0F2F1; color: #004D40; }
-.b-waiting  { background: #FFF3E0; color: #E65100; }
-.b-closed   { background: #ECEFF1; color: #37474F; }
+.b-pinned {
+  background: #fff0f6;
+  color: #d9480f;
+}
+.b-notice {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+.b-new {
+  background: #e8eaf6;
+  color: #3f51b5;
+}
+.b-answered {
+  background: #e0f2f1;
+  color: #004d40;
+}
+.b-waiting {
+  background: #fff3e0;
+  color: #e65100;
+}
+.b-closed {
+  background: #eceff1;
+  color: #37474f;
+}
 
 /* 페이지네이션 */
 .pager {
@@ -217,7 +239,7 @@ td:last-child {
   justify-content: center;
   border-radius: 8px;
   background: #ffffff;
-  border: 1px solid #E9ECEF;
+  border: 1px solid #e9ecef;
   color: #495057;
   cursor: pointer;
   font-size: 14px;
@@ -249,15 +271,17 @@ td:last-child {
 }
 
 /* 모달 열릴 때 */
-.modal-overlay.open { display: flex; }
+.modal-overlay.open {
+  display: flex;
+}
 
 /* 모달 박스 */
 .modal {
   background: #ffffff;
   border-radius: 16px;
-  width: 75%;     
+  width: 75%;
   padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* 모달 제목 */
@@ -269,7 +293,9 @@ td:last-child {
 }
 
 /* 모달 입력 행 */
-.form-row { margin-bottom: 1.25rem; }
+.form-row {
+  margin-bottom: 1.25rem;
+}
 
 /* 모달 입력 라벨 */
 .form-row label {
@@ -286,7 +312,7 @@ td:last-child {
   width: 100%;
   padding: 10px 14px;
   font-size: 14px;
-  border: 1px solid #CED4DA;
+  border: 1px solid #ced4da;
   border-radius: 8px;
   outline: none;
   font-family: inherit;
@@ -322,7 +348,7 @@ td:last-child {
   background: #ffffff;
   padding: 2rem;
   border-radius: 12px 12px 0 0;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   border-bottom: none;
 }
 
@@ -337,7 +363,7 @@ td:last-child {
 /* 상세 페이지 작성자, 날짜, 조회수 */
 .detail-meta {
   font-size: 13px;
-  color: #868E96;
+  color: #868e96;
   display: flex;
   gap: 16px;
 }
@@ -347,7 +373,7 @@ td:last-child {
   background: white;
   padding: 2rem;
   border-radius: 0 0 12px 12px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   font-size: 15px;
   line-height: 1.8;
   color: #333333;
@@ -367,7 +393,7 @@ td:last-child {
   background: #ffffff;
   padding: 14px 18px;
   border-radius: 10px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   margin-bottom: 10px;
 }
 
@@ -396,7 +422,7 @@ td:last-child {
 .comment-input-row input {
   flex: 1;
   padding: 12px 16px;
-  border: 1px solid #CED4DA;
+  border: 1px solid #ced4da;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
@@ -405,4 +431,187 @@ td:last-child {
 /* 댓글 입력창 포커스 */
 .comment-input-row input:focus {
   border-color: #614e9c;
+}
+
+/* ===================================================
+   ✅ [정중앙 정렬 보완본] 모바일 대응 반응형 스타일 (768px 이하)
+   =================================================== */
+@media (max-width: 768px) {
+  /* 1. 전체 컨테이너 및 레이아웃 중앙 정렬 */
+  .container {
+    margin: 1rem auto 2rem !important;
+    padding: 0 16px 2rem !important; /* 양옆 여백 균등 배분 */
+    flex-direction: column !important;
+    align-items: center !important; /* 내부 요소들을 가로축 정중앙에 정렬 */
+    gap: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. 상단 가로 탭 메뉴(구 사이드바) 최적화 */
+  .sidebar {
+    width: 100% !important;
+    max-width: 500px !important; /* 모바일에서 너무 펑퍼짐해지지 않게 제한 */
+    margin: 0 auto !important;
+  }
+
+  .nav-menu-box {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    margin: 0 auto 8px !important;
+    width: 100% !important;
+    justify-content: center !important; /* 탭 메뉴들을 중앙으로 밀착 */
+  }
+
+  .nav-item {
+    flex: 1 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 10px 6px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    border-radius: 6px !important;
+  }
+
+  /* 3. 🎯 [핵심 수정] #main-area 메인 콘텐츠 영역 중앙 배치 */
+  .main-content {
+    width: 100% !important;
+    max-width: 600px !important; /* 모바일 가독성이 가장 좋은 폭으로 제한 */
+    margin: 0 auto !important; /* 부모 박스 기준 무조건 정중앙 정렬 */
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 게시판 헤더 정렬 조율 */
+  .board-header {
+    margin-bottom: 16px !important;
+    display: flex !important;
+    justify-content: space-between !important; /* 타이틀과 글쓰기 버튼 양끝 정렬 */
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 4px !important;
+  }
+
+  .board-title {
+    font-size: 18px !important;
+    text-align: left !important;
+  }
+
+  .btn-write {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    border-radius: 6px !important;
+  }
+
+  /* 4. 게시판 테이블 카드형 리스트 정렬 */
+  .board-table {
+    display: block !important;
+    border-top: 2px solid #614e9c !important;
+    width: 100% !important;
+  }
+
+  .board-table thead {
+    display: none !important;
+  }
+
+  .board-table tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* 각 게시글 행(Row)을 독립적인 중앙 정렬 카드로 인식 */
+  .board-table tr {
+    display: block !important;
+    padding: 14px 8px !important;
+    border-bottom: 1px solid #eeeeee !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    text-align: left !important; /* 내부 텍스트는 왼쪽 정렬로 안정감 부여 */
+  }
+
+  /* 게시글 제목 단독 행 정렬 */
+  .board-table td:nth-child(2) {
+    display: block !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #111111 !important;
+    margin-bottom: 6px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    width: 100% !important;
+  }
+
+  /* 번호 숨김 */
+  .board-table td:nth-child(1) {
+    display: none !important;
+  }
+
+  /* 작성자, 날짜, 조회수 메타 태그 정렬 */
+  .board-table td:nth-child(3),
+  .board-table td:nth-child(4),
+  .board-table td:nth-child(5) {
+    display: inline-block !important;
+    font-size: 12px !important;
+    color: #868e96 !important;
+  }
+
+  .board-table td:nth-child(3)::after,
+  .board-table td:nth-child(4)::after {
+    content: '•' !important;
+    margin: 0 8px !important;
+    color: #cccccc !important;
+  }
+
+  .board-table td:nth-child(5)::before {
+    content: '조회수 ' !important;
+  }
+
+  /* 5. 글쓰기 / 상세보기 모달창 반응형 중앙 정렬 */
+  .modal {
+    width: 92% !important;
+    max-width: 450px !important;
+    padding: 20px 16px !important;
+    border-radius: 12px !important;
+    margin: auto !important; /* 모달창 화면 정중앙 고정 */
+  }
+
+  .modal-title {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+    text-align: center !important; /* 모달 타이틀 중앙 정렬 */
+  }
+
+  .form-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+  }
+
+  .form-row label {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+
+  .form-row input,
+  .form-row textarea {
+    width: 100% !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+
+  .modal-actions {
+    margin-top: 18px !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .modal-actions .btn {
+    flex: 1 !important;
+    padding: 10px 0 !important;
+    font-size: 14px !important;
+  }
 }

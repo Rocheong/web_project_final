@@ -1,3 +1,18 @@
+// 햄버거 메뉴
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuBtn = document.getElementById('mobile-menu')
+  const navLinks = document.querySelector('.nav-links')
+  const headerRight = document.querySelector('.header-right')
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      // 참고용 코드처럼 active 클래스를 토글하여 메뉴를 열고 닫습니다.
+      navLinks.classList.toggle('active')
+      headerRight.classList.toggle('active')
+    })
+  }
+})
+
 function signUp() {
   const id = document.getElementById('signup-id').value
   const pw = document.getElementById('signup-pw').value
@@ -77,7 +92,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const memberLinks = document.querySelectorAll('.member-only')
   if (memberLinks.length) {
     memberLinks.forEach((el) => {
-      el.style.display = user ? '' : 'none'
+      if (user) {
+        // 로그인 상태면 자바스크립트로 넣은 display 속성을 제거 (기본 CSS 적용)
+        el.style.removeProperty('display')
+      } else {
+        // 로그아웃 상태면 무조건! 가장 높은 우선순위로 숨김 처리
+        el.style.setProperty('display', 'none', 'important')
+      }
     })
   }
   // 헤더의 로그인 링크 숨김 처리
